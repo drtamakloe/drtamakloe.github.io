@@ -6,4 +6,4 @@ I am a Transportation Engineering PhD candidate  at the University of Seoul. I h
 As a researcher, my research interests cover two main areas. In the area of **traffic safety**, I employ  data mining, spatial analysis, and advanced econometric modelling techniques for transport safety big data analysis. Regarding **transportation planning**, I use machine learning tools for disaster simulation and evacuation planning. Besides, I	perform sustainable transport-related analysis on integrated multimodal transport networks using artificial intelligence and social network analysis techniques. 
 
 Aside academics, I double as the CEO of Timeless Ghana where I oversee imports and marketing of goods and services. I also work as a  Research Fellow at DONG IL Engineering Consultants Ltd.
-![KakaoTalk_20211223_143957707](https://user-images.githubusercontent.com/54928952/152290272-bbd8a043-6898-4c53-94d3-1398e43ee151.png)
+
