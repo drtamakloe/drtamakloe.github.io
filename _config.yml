@@ -1,6 +1,6 @@
 title: Home
-logo: /assets/img/logo.png
-description: University of Seoul.
+logo: /assets/logo.jpg
+description: University of Seoul
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
