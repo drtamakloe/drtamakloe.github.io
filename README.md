@@ -1,4 +1,4 @@
-## Reuben Tamakloe
+# Reuben Tamakloe
 
 ### About me
 I am a Transportation Engineering PhD candidate  at the University of Seoul. I hold a bachelors degree in Statistics with Mathematics, BSc (Hons) Statistics from the University of Ghana. During my research carreer, I gained in-depth experience in the use of tools like NLOGIT, SPSS, STATA, Gephi, Python, ArcGIS Pro, and R. 
