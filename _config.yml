@@ -3,7 +3,7 @@ logo: /assets/logo.jpg
 description: University of Seoul
 show_downloads: true
 google_analytics:
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 
 author: "Reuben Tamakloe"
 lang: "en"
