@@ -5,3 +5,4 @@ author: "Reuben Tamakloe"
 #menu
 navigation:
  - {file: "README.md", icon: home}
+ - {file: "Publications.md", icon: home}
