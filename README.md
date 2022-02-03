@@ -7,3 +7,14 @@ As a researcher, my research interests cover two main areas. In the area of **tr
 
 Aside academics, I double as the CEO of Timeless Ghana where I oversee imports and marketing of goods and services. I also work as a  Research Fellow at DONG IL Engineering Consultants Ltd.
 
+---
+title: PAGE TITLE 1
+layout: template
+filename: NAME OF THIS .md FILE HERE
+---
+
+---
+title: PAGE TITLE 2
+layout: template
+filename: NAME OF THIS .md FILE HERE
+--- 
