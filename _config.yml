@@ -16,8 +16,8 @@ social-network-links:
 
 #menu
 navigation:
-  - {file: "README.md", icon: home}
-  - {file: "Publications.md", icon: publications}
+  - {file: "README.md", title: "Home", icon: home}
+  - {file: "Publications.md", title: "publications", icon: publications}
 
 
 
