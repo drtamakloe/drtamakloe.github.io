@@ -1,8 +1,8 @@
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "dark 
 #"default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
-title: "Main"
+logo: "/assets/images/88x88.png"
+title: "About me"
 author: "Reuben Tamakloe"
 description: "University of Seoul"
 lang: "en"
