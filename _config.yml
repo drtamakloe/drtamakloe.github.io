@@ -1,6 +1,9 @@
 theme: jekyll-theme-minimal
 title: "Main"
 author: "Reuben Tamakloe"
+description: "University of Seoul"
+lang: en
+
 
 #menu
 navigation:
