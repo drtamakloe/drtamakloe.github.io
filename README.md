@@ -16,17 +16,17 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 
 ### Links to other pages
 
-?[LinkedIn](https://www.linkedin.com/in/drtamakloe/)
+#[LinkedIn](https://www.linkedin.com/in/drtamakloe/)
 
-[ResearchGate](https://www.researchgate.net/profile/Reuben-Tamakloe)
+#[ResearchGate](https://www.researchgate.net/profile/Reuben-Tamakloe)
 
-[Publications](Publications.md)
+#[Publications](Publications.md)
 
-[Conferences attended](Conferences.md)
+#[Conferences attended](Conferences.md)
 
-[Journals refreed](Journals.md)
+#[Journals refreed](Journals.md)
 
-[Volunteer and extracurricular activities](Volunteer.md)
+#[Volunteer and extracurricular activities](Volunteer.md)
 
 [Download my CV](CV.md)
 
