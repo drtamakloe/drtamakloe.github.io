@@ -1,4 +1,4 @@
-title: Home
+title: My personal academic website
 email: drtamakloe@uos.ac.kr
 logo: /assets/logo.jpg
 description: University of Seoul
@@ -7,6 +7,9 @@ google_analytics:
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-tactile
 theme: minima
+twitter_username: drtamakloe
+github_username: drtamakloe
+linkedin_username: drtamakloe
 
 
 
