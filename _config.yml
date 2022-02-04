@@ -14,11 +14,11 @@ google_analytics:
 theme: minima
 minima:
   date_format: "%b %-d, %Y"
-linkedin_username: drtamakloe
+#linkedin_username: drtamakloe
 #github_username: drtamakloe
-instagram_username: drtamakloe
-twitter_username: drtamakloe
-gmail_username: drtamakloe
+#instagram_username: drtamakloe
+#twitter_username: drtamakloe
+#gmail_username: drtamakloe
 affiliation: University of Seoul
 
 
