@@ -1,3 +1,10 @@
+---
+layout: page
+title: Publications
+permalink: /publications/
+---
+
+
 ## Publications
 
 • Tamakloe R., Das, S., Aidoo E. N., Park, D. (2021). A data mining approach to discovering the chains of factors affecting motorcycle crash casualty severity at signalized and non-signalized intersections in a developing country. Accident Analysis & Prevention, 165, 106517. 
