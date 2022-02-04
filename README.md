@@ -70,3 +70,30 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 • The 13th UC-US-KU-TU International Joint Seminar, China and France Center, Tongji University, Shanghai, China 
 
 • The 2018 Korean Institute of ITS Conference, Halla Convention center, Cheju Halla University, Jeju, South Korea: A Study for Conditional Mixed Process Model of Bus-related Crashes on Expressway
+
+## Journals refereed 
+
+• Cities 
+
+• Transportation Research Part E: Logistics and Transportation Review
+
+• Transport Policy
+
+• Transportation Research Record: Journal of the Transportation Research Board
+
+• KSCE Journal of Civil Engineering
+
+• International Journal of Urban Sciences
+
+• Sustainability
+
+## Volunteer and extra-curricular engagements
+
+•	New Student Mentoring Volunteer – International Student Office, University of Seoul
+
+•	Organizing Secretary – Ghanaian Students in Korea and Associates, South Korea
+
+•	University Representative (University of Seoul) – Ghanaian Students in Korea and Associates, South Korea
+
+•	Leader, Program Planning Team – Ghana Association of Statistics Students, University of Ghana
+
