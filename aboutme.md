@@ -13,6 +13,7 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 
 ### Links to other pages
 [Google Scholar](https://scholar.google.com/citations?user=2V3gP2EAAAAJ&hl=en&oi=ao)
+
 [ResearchGate](https://www.researchgate.net/profile/Reuben-Tamakloe)
 
 [Download my CV](CV.md)
