@@ -1,5 +1,5 @@
 
-![logo](/assets/logo.jpg)
+Welcome to my personal academic website
 
 <p align="center">
   <img src="/assets/logo.jpg" />
