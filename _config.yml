@@ -1,18 +1,34 @@
 title: Reuben Tamakloe, PhD
 email: drtamakloe@uos.ac.kr
 logo: /assets/logo.jpg
+author:
+  name: drtamakloe
+  email: drtamakloe@uos.ac.kr
+
+
 description: University of Seoul
 show_downloads: false
 google_analytics:
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-tactile
 theme: minima
+minima:
+  date_format: "%b %-d, %Y"
 linkedin_username: drtamakloe
 #github_username: drtamakloe
 instagram_username: drtamakloe
 twitter_username: drtamakloe
 gmail_username: drtamakloe
 affiliation: University of Seoul
+
+
+# generate social links in footer
+  social_links:
+    twitter: drtamakloe
+    github:  drtamakloe
+    instagram: drtamakloe
+    linkedin: drtamakloe
+
 
 
 
