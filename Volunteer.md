@@ -4,8 +4,6 @@ title: Volunteer and extra-curricular engagements
 permalink: /volunteer/
 ---
 
-## Volunteer and extra-curricular engagements
-
 •	New Student Mentoring Volunteer – International Student Office, University of Seoul
 
 •	Organizing Secretary – Ghanaian Students in Korea and Associates, South Korea
