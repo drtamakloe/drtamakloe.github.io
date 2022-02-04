@@ -46,3 +46,7 @@ permalink: /publications/
 • Tamakloe R., Park D. (2021). Vehicle-involved crashes at different spatio-temporal hotspots: deciphering the groups of influential hotspot-specific risk factors using GIS and a machine learning approach. Submitted to Journal of Transport Geography. 
 
 • Tamakloe, R., Adanu, E. K., Das, S., & Park, D. A correlated random parameters approach to investigating the joint effect of lighting and pedestrian action on casualty injury severity. In preparation for Analytic Methods in Accident Research
+
+
+Back to the [main page](https://drtamakloe.github.io/).
+
