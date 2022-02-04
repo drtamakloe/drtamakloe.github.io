@@ -1,3 +1,7 @@
+---
+layout: page
+title: Welcome
+---
 
 <p align="center">
     Welcome to my personal academic website
