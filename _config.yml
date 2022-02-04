@@ -1,11 +1,16 @@
 title: Home
 logo: /assets/logo.jpg
-description: University of Seoul
+description: My personal academic homepage
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
 #theme: jekyll-theme-tactile
 #theme: jekyll-theme-architect
+
+affiliation: University of Seoul
+email: drtamakloe@uos.ac.kr
+google_scholar: https://scholar.google.com/citations?user=2V3gP2EAAAAJ&hl=en&oi=ao
+linkedin: https://www.linkedin.com/in/drtamakloe/
 
 author: "Reuben Tamakloe"
 lang: "en"
