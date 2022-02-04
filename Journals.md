@@ -1,4 +1,8 @@
-## Journals refereed 
+---
+layout: page
+title: Journals refreed
+permalink: /journals/
+---
 
 • Cities 
 
