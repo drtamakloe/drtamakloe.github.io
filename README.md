@@ -1,6 +1,6 @@
 
 <p align="center">
-    // Welcome to my personal academic website
+    Welcome to my personal academic website
 </p>
 
 <p align="center">
@@ -8,10 +8,10 @@
 </p>
 
 <p align="center">
-    // I am Reuben Tamakloe
+    I am Reuben Tamakloe
 </p>
 <p align="center">
-    // an aspiring data scientist and transportation engineer
+    an aspiring data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
 </p>
 
 
