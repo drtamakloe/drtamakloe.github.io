@@ -10,7 +10,14 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 
 ### Links to other pages
 
-[Publications!](Publications.md)
-[CV!](CV.md)
+[Publications](Publications.md)
+
+[Conferences attended](Conferences.md)
+
+[Journals refreed](Journals.md)
+
+[Volunteer and extracurricular activities](.md)
+
+[Download my CV!](CV.md)
 
 
