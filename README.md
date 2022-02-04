@@ -12,10 +12,8 @@ title: Welcome
 </p>
 
 <p align="center">
-    I am Reuben Tamakloe
+    I am Reuben Tamakloe, an aspiring data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
 </p>
-<p align="center">
-    an aspiring data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
-</p>
+
 
 
