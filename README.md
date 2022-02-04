@@ -1,2 +1,2 @@
 ### Welcome
-!(assets/logo.jpg)
+![logo](/assets/logo.jpg)
