@@ -20,4 +20,3 @@ permalink: /journals/
 
 Back to the [main page](https://drtamakloe.github.io/).
 
-Back to the [main page](https://drtamakloe.github.io/).
