@@ -8,6 +8,10 @@ As a researcher, my research interests cover two main areas. In the area of **tr
 Aside academics, I double as the CEO of Timeless Ghana where I oversee imports and marketing of goods and services. I also work as a  Research Fellow at DONG IL Engineering Consultants Ltd.
 
 
+### Links to other pages
+
+[Google Scholar!]
+
 ## Publications
 • Tamakloe R., Das, S., Aidoo E. N., Park, D. (2021). A data mining approach to discovering the chains of factors affecting motorcycle crash casualty severity at signalized and non-signalized intersections in a developing country. Accident Analysis & Prevention, 165, 106517. 
 
@@ -71,6 +75,7 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 
 • The 2018 Korean Institute of ITS Conference, Halla Convention center, Cheju Halla University, Jeju, South Korea: A Study for Conditional Mixed Process Model of Bus-related Crashes on Expressway
 
+
 ## Journals refereed 
 
 • Cities 
@@ -86,6 +91,7 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 • International Journal of Urban Sciences
 
 • Sustainability
+
 
 ## Volunteer and extra-curricular engagements
 
