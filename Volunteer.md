@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Volunteer and extra-curricular engagements
+title: Volunteer/engagements
 permalink: /volunteer/
 ---
 
