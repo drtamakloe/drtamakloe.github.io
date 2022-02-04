@@ -8,6 +8,7 @@ As a researcher, my research interests cover two main areas. In the area of **tr
 Aside academics, I double as the CEO of Timeless Ghana where I oversee imports and marketing of goods and services. I also work as a  Research Fellow at DONG IL Engineering Consultants Ltd.
 
 ##Publications
+
 • Tamakloe R., Das, S., Aidoo E. N., Park, D. (2021). A data mining approach to discovering the chains of factors affecting motorcycle crash casualty severity at signalized and non-signalized intersections in a developing country. Accident Analysis & Prevention, 165, 106517. 
 • Tamakloe R., Lim, S., Sam, E. F., Park, S. H., Park, D. (2021). Investigating factors affecting bus/minibus accident severity in a developing country for different subgroup datasets characterized by time, pavement, and light conditions. Accident Analysis & Prevention, 159, 106268. 
 • Tamakloe, R., Hong, J., Tak, J., & Park, D. (2021). Finding evacuation routes using traffic and network structure information. Transportation Research Part D: Transport and Environment, 95, 102853. 
