@@ -18,6 +18,6 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 
 [Volunteer and extracurricular activities](.md)
 
-[Download my CV!](CV.md)
+[Download my CV](CV.md)
 
 
