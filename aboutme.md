@@ -16,3 +16,7 @@ Aside academics, I double as the CEO of Timeless Ghana where I oversee imports a
 [Download my CV](CV.md)
 
 
+Back to the [main page](https://drtamakloe.github.io/).
+
+
+
