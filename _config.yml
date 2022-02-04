@@ -14,12 +14,18 @@ google_analytics:
 theme: minima
 minima:
   date_format: "%b %-d, %Y"
+
+# Minima social links
+
 #linkedin_username: drtamakloe
 #github_username: drtamakloe
 #instagram_username: drtamakloe
 #twitter_username: drtamakloe
 #gmail_username: drtamakloe
 affiliation: University of Seoul
+
+# Minima: show excerpts in the frontpage
+show_excerpts: true
 
 
 # generate social links in footer
