@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Home
+title: About me
+permalink: /home/
 ---
 
 ### About me
