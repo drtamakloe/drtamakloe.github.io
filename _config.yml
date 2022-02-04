@@ -1,11 +1,12 @@
 title: Home
+email: drtamakloe@uos.ac.kr
 logo: /assets/logo.jpg
 description: University of Seoul
 show_downloads: false
 google_analytics:
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
 #theme: jekyll-theme-tactile
-#theme: jekyll-theme-architect
+theme: minima
 
 
 
