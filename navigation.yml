@@ -1,0 +1,11 @@
+main:
+  - title: home
+    url: /home/
+  - title: Publications
+    url: /publications/
+  - title: Conferences attended
+    url: /conferences/
+  - title: Journals refreed
+    url: /journals/
+  - title: Volunteer and extra-curricular engagements
+    url: /volunteer/    
