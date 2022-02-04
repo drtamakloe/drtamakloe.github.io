@@ -1,1 +1,2 @@
-### Welcome to my page
+### Welcome
+!(assets/logo.jpg)
