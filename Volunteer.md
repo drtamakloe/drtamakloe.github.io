@@ -11,3 +11,7 @@ permalink: /volunteer/
 •	University Representative (University of Seoul) – Ghanaian Students in Korea and Associates, South Korea
 
 •	Leader, Program Planning Team – Ghana Association of Statistics Students, University of Ghana
+
+
+Back to the [main page](https://drtamakloe.github.io/).
+
