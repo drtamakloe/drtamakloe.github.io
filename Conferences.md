@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conferences attended
+title: Conferences
 permalink: /conferences/
 ---
 
