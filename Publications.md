@@ -4,8 +4,7 @@ title: Publications
 permalink: /publications/
 ---
 
-
-## Publications
+### Papers published
 
 • Tamakloe R., Das, S., Aidoo E. N., Park, D. (2021). A data mining approach to discovering the chains of factors affecting motorcycle crash casualty severity at signalized and non-signalized intersections in a developing country. Accident Analysis & Prevention, 165, 106517. 
 
@@ -34,7 +33,7 @@ permalink: /publications/
 • Hong, J., Tamakloe, R., & Park, D. (2019). A comprehensive analysis of multi-vehicle crashes on expressways: a double hurdle approach. Sustainability, 11(10), 2782.
 
 
-## Papers under review
+### Papers under review
 
 • Tamakloe, R., Hong, J., Kim, J., Park, D. (2021). Factors affecting PTW at-fault crash outcome metrics at intersections and non-intersections in Korea. Under review – International Journal of Injury Control and Safety Promotion. 
 
