@@ -1,3 +1,9 @@
+---
+layout: page
+title: home
+permalink: /home/
+---
+
 # Dr. Reuben Tamakloe
 
 ## About me
