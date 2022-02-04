@@ -1,3 +1,9 @@
+---
+layout: page
+title: Volunteer and extra-curricular engagements
+permalink: /volunteer/
+---
+
 ## Volunteer and extra-curricular engagements
 
 •	New Student Mentoring Volunteer – International Student Office, University of Seoul
