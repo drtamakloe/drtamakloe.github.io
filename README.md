@@ -1,21 +1,4 @@
 
-<!-- Default sidebar -->
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    ...
-  </div>
-</div>
-
-<!-- Modified sidebar -->
-<div class="sidebar">
-  <div class="container">
-    ...
-  </div>
-</div>
-
-
-
-
 
 <p align="center">
 <a href="https://hits.seeyoufarm.com"><img src="http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg"/></a>
