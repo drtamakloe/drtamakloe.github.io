@@ -56,6 +56,37 @@ version:          3.0.0
 ![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
 
 
+email:
+  id: 'drtamakloe@uos.ac.kr'
+  href: 'mailto:'
+  title: 'Email'
+  fa-icon: 'fa-solid fa-envelope'
+
+googlescholar:
+  id: '/citations?user=2V3gP2EAAAAJ&hl=en&oi=ao'
+  href: 'https://scholar.google.com/'
+  title: 'GoogleScholar'
+  fa-icon: 'fa-brands fa-google'
+  
+Researchgate:
+  id: 'profile/drtamakloe'
+  href: 'https://www.researchgate.net/'
+  title: 'ResearchGate'
+  fa-icon: 'fa-brands fa-researchgate'
+
+linkedin:
+  id: 'in/drtamakloe/'
+  href: 'https://www.linkedin.com/'
+  title: 'LinkedIn'
+  fa-icon: 'fa-brands fa-linkedin'
+  
+github:
+  id: 'drtamakloe'
+  href: 'https://github.com/'
+  title: 'GitHub'
+  fa-icon: 'fa-brands fa-github-square'
+
+
 
 
 
