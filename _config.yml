@@ -21,11 +21,11 @@ google_analytics: G-G58P7X4Y1K
 #Theme setup
 #https://github.com/jekyll/minima
 #theme: jekyll-theme-minimal
-#theme: jekyll-theme-tactile
-theme: minima
-minima:
-  date_format: "%b %-d, %Y"
-  skin: dark
+theme: jekyll-theme-tactile
+#theme: minima
+#minima:
+  #date_format: "%b %-d, %Y"
+  #skin: dark
 
 
 # Minima social links
