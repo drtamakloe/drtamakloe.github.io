@@ -10,8 +10,8 @@ show_downloads: false
 #Theme setup
 theme: minima
 minima:
-  date_format: "%b %-d, %Y"
-  skin: dark
+date_format: "%b %-d, %Y"
+skin: dark
 
 # Google Analytics
 google_analytics: G-G58P7X4Y1K
@@ -20,5 +20,4 @@ google_analytics: G-G58P7X4Y1K
 linkedin_username: drtamakloe
 instagram_username: drtamakloe
 twitter_username: drtamakloe
-gmail_username: drtamakloe
 
