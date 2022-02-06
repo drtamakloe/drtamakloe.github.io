@@ -15,6 +15,7 @@ theme: minima
 minima:
   date_format: "%b %-d, %Y"
 
+
 # Minima social links
 
 #linkedin_username: drtamakloe
@@ -34,6 +35,8 @@ show_excerpts: true
     github: drtamakloe
     instagram: drtamakloe
     linkedin: drtamakloe
+    
+![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
 
 
 
