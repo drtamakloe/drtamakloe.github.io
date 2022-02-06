@@ -1,10 +1,10 @@
 
 
-![Hits](https://storage.googleapis.com/hit-counter/main.png)
 
 <p align="center">
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter%2FREADME&count_bg=%2379C83D&title_bg=%23555555&icon=go.svg&icon_color=%2300ADD8&title=hits&edge_flat=false"/></a>
+<a href="https://hits.seeyoufarm.com"><img src="http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg"/></a>
 </p>
+
 
 <p align="center">
     Welcome to my personal academic website
