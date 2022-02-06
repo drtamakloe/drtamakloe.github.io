@@ -16,10 +16,9 @@ minima:
 # Google Analytics
 google_analytics: G-G58P7X4Y1K
 
-# generate social links in footer
-social_links:
-    twitter: drtamakloe
-    github: drtamakloe
-    instagram: drtamakloe
-    linkedin: drtamakloe
+# Minima social links
+linkedin_username: drtamakloe
+instagram_username: drtamakloe
+twitter_username: drtamakloe
+gmail_username: drtamakloe
 
