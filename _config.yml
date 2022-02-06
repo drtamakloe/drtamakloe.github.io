@@ -7,6 +7,12 @@ description: University of Seoul (2022)
 affiliation: University of Seoul (2022)
 show_downloads: false
 
+#Theme setup
+theme: minima
+minima:
+  date_format: "%b %-d, %Y"
+  skin: dark
+
 # Google Analytics
 google_analytics: G-G58P7X4Y1K
 
