@@ -1,12 +1,3 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
-
-# Setup
 title: Reuben Tamakloe, PhD
 tagline: 'A Jekyll theme'
 email: drtamakloe@uos.ac.kr
@@ -49,11 +40,6 @@ show_excerpts: true
     github: drtamakloe
     instagram: drtamakloe
     linkedin: drtamakloe
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
 
 ![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
 
