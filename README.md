@@ -1,4 +1,4 @@
-![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
+
 
 <p align="center">
     Welcome to my personal academic website
@@ -12,4 +12,4 @@
     I am Reuben Tamakloe, an aspiring data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
 </p>
 
-
+![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
