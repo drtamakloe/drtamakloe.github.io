@@ -9,7 +9,7 @@ show_downloads: false
 
 #Theme setup
 theme: minima
-remote_theme: songzivong/dark-minima
+
 
 
 # Google Analytics
