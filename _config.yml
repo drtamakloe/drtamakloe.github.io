@@ -9,6 +9,10 @@ author:
 description: University of Seoul
 show_downloads: false
 google_analytics: G-G58P7X4Y1K
+
+#google_analytics website
+#https://analytics.google.com/analytics/web/provision/#/a219529364p302526804/admin/account/settings
+
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-tactile
 theme: minima
