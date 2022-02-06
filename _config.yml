@@ -1,5 +1,7 @@
 title: Reuben Tamakloe, PhD
-tagline: 'A Jekyll theme'
+tagline: 'Researcher'
+url:  https://drtamakloe.github.io
+paginate:         5
 email: drtamakloe@uos.ac.kr
 logo: /assets/logo.jpg
 author:
@@ -9,6 +11,8 @@ author:
 
 description: University of Seoul
 show_downloads: false
+
+# Google Analytics
 google_analytics: G-G58P7X4Y1K
 
 #google_analytics website
@@ -40,6 +44,14 @@ show_excerpts: true
     github: drtamakloe
     instagram: drtamakloe
     linkedin: drtamakloe
+    
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+
+# Custom vars
+version:          3.0.0
 
 ![HitCount](http://hits.dwyl.com/dev-yakuza/react-native-image-modal.svg)
 
