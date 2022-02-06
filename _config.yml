@@ -1,7 +1,18 @@
 title: Reuben Tamakloe, PhD
+email: drtamakloe@uos.ac.kr
+author:
+  name: "Reuben Tamakloe"
+  email: drtamakloe@uos.ac.kr
+description: University of Seoul (2022)
+show_downloads: false
 
+# Google Analytics
+google_analytics: G-G58P7X4Y1K
 
-
-
-
+# generate social links in footer
+  social_links:
+    twitter: drtamakloe
+    github: drtamakloe
+    instagram: drtamakloe
+    linkedin: drtamakloe
 
