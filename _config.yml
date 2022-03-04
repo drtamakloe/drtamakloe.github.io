@@ -16,6 +16,12 @@ theme: minima
 google_analytics: G-G58P7X4Y1K
 google_analytics: G-5QZTXXTGW4
 
+# Analytics
+analytics:
+  provider               : "custom" # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id          :
+
 # Minima social links
 linkedin_username: drtamakloe
 instagram_username: drtamakloe
