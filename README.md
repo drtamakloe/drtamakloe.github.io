@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    I am Reuben Tamakloe, an aspiring data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
+    I am Reuben Tamakloe, a data scientist and transportation engineer, passionate about solving problems geared towards the realization of a better world
 </p>
 
 
