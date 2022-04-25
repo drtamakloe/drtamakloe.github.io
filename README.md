@@ -15,7 +15,7 @@
 
 
 
-<left><a href="https://livetrafficfeed.com/flag-counter" data-row="7" data-col="2" data-code="1" data-flag="1" data-bg="ffffff" data-text="000000" data-root="0" id="LTF_flags_href">Site Flags Counter</a><script type="text/javascript" src="//cdn.livetrafficfeed.com/static/flag-counter/live.v2.js"></script><noscript><a href="https://livetrafficfeed.com/flag-counter">Site Flags Counter</a><a href="https://w3seotools.com">SEO audit tools</a></noscript></left>
+
 
 
 
