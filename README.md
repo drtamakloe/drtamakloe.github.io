@@ -1,5 +1,5 @@
 <p align="center">
-    Welcome to my personal academic website
+    **Welcome to my personal academic website**
 </p>
 
 <p align="center">
