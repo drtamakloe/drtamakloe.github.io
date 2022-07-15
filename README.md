@@ -8,7 +8,7 @@
 
 <p align="center">
     I am Reuben Tamakloe, a data scientist and transportation engineer, passionate about research directed at solving problems geared towards the realization of a better world
-    Interests - application of machine learning, big data analytics, econometric techniques, and geospatial tools for transport planning (**autonomous vehicles**, public transport network analysis), transport safety, and logistics
+    Interests - application of machine learning, big data analytics, econometric techniques, and geospatial tools for transport planning (**autonomous vehicles**, public transport network analysis), transport safety analysis, and logistics-related research
 </p>
 
 
