@@ -4,7 +4,7 @@ title: Videos
 permalink: /videos/
 ---
 
-### Recorded Talks
+### Recorded Invited Talks
 
 1. Leveraging artificial intelligence to improve safety for personal mobility device users, C2SMARTER, ***New York University***, New York, USA (2024.07.25).
 
