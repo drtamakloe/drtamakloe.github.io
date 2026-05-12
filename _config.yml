@@ -1,9 +1,9 @@
 # Site Settings
 title: "Reuben Tamakloe, PhD"
+author: "Reuben Tamakloe"
+email: "drtamakloe@kaist.ac.kr"
 description: >-
-  Academic portfolio and research website of Reuben Tamakloe. 
-  Assistant Research Professor at the Cho Chun Shik Graduate School of Mobility, KAIST.
-email: drtamakloe@kaist.ac.kr
+  Academic portfolio and research website of Reuben Tamakloe. Assistant Research Professor at the Cho Chun Shik Graduate School of Mobility, KAIST.
 affiliation: "Cho Chun Shik Graduate School of Mobility, Korea Advanced Institute of Science and Technology (KAIST)"
 url: "https://drtamakloe.github.io"
 show_downloads: false
@@ -11,22 +11,19 @@ show_downloads: false
 # Theme Setup
 theme: minima
 
-# Author Information
-author:
-  name: "Reuben Tamakloe, PhD"
-  email: drtamakloe@kaist.ac.kr
-  twitter: drtamakloe
-  linkedin: drtamakloe
-  instagram: drtamakloe
+# Social Media Profiles
+twitter_username: drtamakloe
+linkedin_username: drtamakloe
+instagram_username: drtamakloe
 
 # Academic Profiles
-academic_links:
-  google_scholar: "https://scholar.google.com/citations?user=2V3gP2EAAAAJ&hl=en"
-  scopus: "https://www.scopus.com/authid/detail.uri?authorId=57206723737"
-  orcid: "https://orcid.org/0000-0002-9605-8439"
+google_scholar: "https://scholar.google.com/citations?user=2V3gP2EAAAAJ&hl=en"
+scopus: "https://www.scopus.com/authid/detail.uri?authorId=57206723737"
+orcid: "https://orcid.org/0000-0002-9605-8439"
 
-# Google Analytics
+# Analytics
 google_analytics: G-G58P7X4Y1K
+google_analytics: G-5QZTXXTGW4
 
 # Build Settings
 plugins:
