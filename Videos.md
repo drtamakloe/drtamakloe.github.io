@@ -12,7 +12,7 @@ permalink: /videos/
   <img src="/assets/NYU1.jpg" />
 </p>
 
-2. Discovering the factors influencing shared autonomous vehicle adoption: A cross-group analysis considering local ride-sharing access and historical usage experience, Korea Advanced Institute of Science and Technology, Daejeon, South Korea. [Watch it here](https://www.youtube.com/watch?v=_DCaLbs5FCA)
+2. Discovering the factors influencing shared autonomous vehicle adoption: A cross-group analysis considering local ride-sharing access and historical usage experience, Korea Advanced Institute of Science and Technology, Daejeon, South Korea (2023.10.12). [Watch it here](https://www.youtube.com/watch?v=_DCaLbs5FCA)
 <p align="center">
   <img src="assets/KAIST3.jpg" />
 </p>
