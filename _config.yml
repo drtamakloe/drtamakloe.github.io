@@ -19,6 +19,7 @@ scopus: "https://www.scopus.com/authid/detail.uri?authorId=57206723737"
 orcid: "https://orcid.org/0000-0002-9605-8439"
 
 google_analytics: G-G58P7X4Y1K
+google_analytics: G-5QZTXXTGW4
 
 plugins:
   - jekyll-feed
