@@ -1,0 +1,70 @@
+# Refreshes Google Scholar citation counts for the TAM Lab website.
+# Runs every Monday, and on demand from the repository's Actions tab ("Run workflow").
+# It writes assets/tamlab/scholar.json, which the website reads. No server or PHP needed.
+name: Update Google Scholar citations
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install scholarly
+        run: pip install "scholarly==1.7.11" "bibtexparser<2"
+
+      - name: Fetch citation counts from Google Scholar
+        env:
+          SCHOLAR_ID: 2V3gP2EAAAAJ
+        run: |
+          python - <<'PY'
+          import datetime, json, os, sys
+          from scholarly import scholarly
+
+          sid = os.environ["SCHOLAR_ID"]
+          try:
+              author = scholarly.search_author_id(sid)
+              author = scholarly.fill(author, sections=["basics", "indices", "publications"])
+          except Exception as e:
+              sys.exit(f"Google Scholar could not be reached this time ({e}). The previous numbers stay on the site.")
+
+          pubs = [{
+              "title": p.get("bib", {}).get("title", ""),
+              "year": p.get("bib", {}).get("pub_year", ""),
+              "citations": p.get("num_citations", 0),
+          } for p in author.get("publications", [])]
+
+          if len(pubs) < 20 or not author.get("citedby"):
+              sys.exit("Google Scholar returned incomplete data. The previous numbers stay on the site.")
+
+          data = {
+              "source": "Google Scholar",
+              "profile": f"https://scholar.google.com/citations?user={sid}",
+              "updated": datetime.date.today().isoformat(),
+              "citations": author.get("citedby"),
+              "hIndex": author.get("hindex"),
+              "i10Index": author.get("i10index"),
+              "publications": pubs,
+          }
+          with open("assets/tamlab/scholar.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, ensure_ascii=False, indent=1)
+          print(f"Saved {len(pubs)} publications, {data['citations']} citations, h-index {data['hIndex']}")
+          PY
+
+      - name: Save the new numbers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/tamlab/scholar.json
+          git diff --cached --quiet || (git commit -m "Update Google Scholar citation counts" && git push)
