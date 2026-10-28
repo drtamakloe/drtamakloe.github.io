@@ -1,6 +1,10 @@
 # Refreshes Google Scholar citation counts for the TAM Lab website.
 # Runs every Monday, and on demand from the repository's Actions tab ("Run workflow").
 # It writes assets/tamlab/scholar.json, which the website reads. No server or PHP needed.
+#
+# Google Scholar often blocks requests from GitHub's servers. To get past that, add a free
+# ScraperAPI key as a repository secret named SCRAPERAPI_KEY (see HOW-TO-UPDATE.md).
+# Without the key, the workflow still tries a direct request, but it may fail.
 name: Update Google Scholar citations
 
 on:
@@ -14,10 +18,11 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -27,10 +32,25 @@ jobs:
       - name: Fetch citation counts from Google Scholar
         env:
           SCHOLAR_ID: 2V3gP2EAAAAJ
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
-          python - <<'PY'
+          timeout 420 python - <<'PY'
           import datetime, json, os, sys
-          from scholarly import scholarly
+          from scholarly import scholarly, ProxyGenerator
+
+          key = os.environ.get("SCRAPERAPI_KEY", "").strip()
+          if key:
+              pg = ProxyGenerator()
+              if not pg.ScraperAPI(key):
+                  sys.exit("The ScraperAPI key was not accepted. Check the SCRAPERAPI_KEY secret.")
+              scholarly.use_proxy(pg)
+              scholarly.set_timeout(60)
+              scholarly.set_retries(3)
+              print("Using ScraperAPI")
+          else:
+              scholarly.set_timeout(15)
+              scholarly.set_retries(1)
+              print("No SCRAPERAPI_KEY secret found. Trying Google Scholar directly; it may block GitHub.")
 
           sid = os.environ["SCHOLAR_ID"]
           try:
