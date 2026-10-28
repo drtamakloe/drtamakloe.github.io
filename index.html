@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TAM Lab | Transportation Analytics &amp; Mobility Lab, KAIST</title>
+<meta name="description" content="The Transportation Analytics & Mobility Lab (TAM Lab) at KAIST's Cho Chun Shik Graduate School of Mobility studies traffic safety, data analytics and AI, urban mobility, and emerging mobility technologies.">
+<meta name="author" content="Reuben Tamakloe">
+<meta property="og:title" content="TAM Lab | Transportation Analytics & Mobility Lab, KAIST">
+<meta property="og:description" content="Interdisciplinary transportation research for smarter, safer, fairer mobility.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://drtamakloe.github.io/">
+<meta property="og:image" content="https://drtamakloe.github.io/assets/tamlab/img/research-areas.jpg">
+<meta name="theme-color" content="#14233F">
+<link rel="canonical" href="https://drtamakloe.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%230E8F9B' stroke-width='4'/%3E%3Cpath d='M3 3 16 16' stroke='%23D43D35' stroke-width='4'/%3E%3Cpath d='M3 29 16 16' stroke='%232D8A4E' stroke-width='4'/%3E%3Cpath d='M30 16H16' stroke='%237649C2' stroke-width='4'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white' stroke='%2314233F' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<!-- ANALYTICS-START -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QZTXXTGW4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QZTXXTGW4');
+</script>
+<!-- ANALYTICS-END -->
+<style>
+:root {
+  --paper: #FFFFFF;
+  --wash: #F1F4F8;
+  --ink: #14233F;
+  --ink-2: #47587A;
+  --ink-3: #66758F;
+  --rule: #D9E0EA;
+  --link: #1B5CC4;
+  --on-ink: #FFFFFF;
+  --safety: #D43D35;
+  --data: #0E8F9B;
+  --urban: #2D8A4E;
+  --emerging: #7649C2;
+  --plate: #FFFFFF;
+  --sans: "Overpass", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --wrap: 1140px;
+  --head-h: 68px;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1623; --wash: #15202F; --ink: #E7EDF6; --ink-2: #AEBACD; --ink-3: #8C9AB1;
+    --rule: #26344A; --link: #8BB8FF; --on-ink: #0E1623;
+    --safety: #F06A61; --data: #34C2CC; --urban: #55BE7A; --emerging: #A783F2; --plate: #F4F6F9;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1623; --wash: #15202F; --ink: #E7EDF6; --ink-2: #AEBACD; --ink-3: #8C9AB1;
+  --rule: #26344A; --link: #8BB8FF; --on-ink: #0E1623;
+  --safety: #F06A61; --data: #34C2CC; --urban: #55BE7A; --emerging: #A783F2; --plate: #F4F6F9;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: calc(var(--head-h) + 16px + env(safe-area-inset-top, 0px)); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-size: 1rem; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--paper); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 clamp(18px, 4vw, 32px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 12px; top: -60px; background: var(--ink); color: var(--on-ink); padding: 10px 14px; border-radius: 6px; z-index: 100; }
+.skip:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+/* Type */
+h1, h2, h3, h4 { font-family: var(--sans); color: var(--ink); margin: 0; line-height: 1.12; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2.3rem, 5.2vw, 3.6rem); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: clamp(1.55rem, 2.8vw, 2rem); font-weight: 800; }
+h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+.prose, .lede { font-family: var(--serif); }
+.prose { font-size: 1.125rem; line-height: 1.68; max-width: 68ch; color: var(--ink); }
+.prose p { margin: 0 0 1em; }
+.lede { font-size: clamp(1.15rem, 1.8vw, 1.3rem); line-height: 1.6; color: var(--ink-2); max-width: 60ch; margin: 18px 0 0; }
+.muted { color: var(--ink-3); }
+.small { font-size: 0.9rem; }
+
+/* Header */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--rule); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: var(--head-h); gap: 20px; }
+.brand { display: flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+.brand svg { flex: none; }
+.brand-name { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.01em; line-height: 1; }
+.brand-sub { display: block; font-size: 0.78rem; color: var(--ink-3); font-weight: 600; margin-top: 3px; letter-spacing: 0; }
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav a { color: var(--ink-2); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 9px 11px 7px; border-radius: 8px; }
+.nav a:hover { color: var(--ink); background: var(--wash); }
+.nav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -3px 0 var(--ink); border-radius: 8px 8px 0 0; }
+.nav a.join { background: var(--ink); color: var(--on-ink); margin-left: 8px; padding: 9px 16px 7px; border-radius: 999px; }
+.nav a.join:hover { background: var(--ink-2); }
+.nav a.join[aria-current="page"] { box-shadow: none; }
+.menu-btn { display: none; background: none; border: 1px solid var(--rule); color: var(--ink); border-radius: 10px; padding: 8px 12px; font: 600 0.95rem var(--sans); cursor: pointer; }
+@media (max-width: 960px) {
+  .menu-btn { display: inline-flex; align-items: center; gap: 8px; }
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 8px clamp(18px, 4vw, 32px) 18px; box-shadow: 0 18px 30px -18px rgba(20,35,63,.35); }
+  .nav.open { display: flex; }
+  .nav a { padding: 13px 8px 11px; font-size: 1.05rem; border-bottom: 1px solid var(--rule); border-radius: 0; }
+  .nav a[aria-current="page"] { box-shadow: inset 4px 0 0 var(--ink); padding-left: 16px; border-radius: 0; }
+  .nav a.join { margin: 14px 0 0; text-align: center; border-bottom: 0; border-radius: 999px; }
+}
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 700 1rem/1 var(--sans); padding: 14px 20px 12px; border-radius: 999px; text-decoration: none; border: 2px solid var(--ink); }
+.btn.primary { background: var(--ink); color: var(--on-ink); }
+.btn.primary:hover { background: var(--ink-2); border-color: var(--ink-2); }
+.btn.ghost { color: var(--ink); background: transparent; }
+.btn.ghost:hover { background: var(--wash); }
+
+/* Line badges (metro-style roundels) */
+.badge { --c: var(--ink); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--c); color: var(--paper); font: 800 0.85rem/1 var(--sans); flex: none; padding-top: 2px; }
+.badge.lg { width: 44px; height: 44px; font-size: 1.1rem; }
+.dot { --c: var(--ink); display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+[data-line="safety"] { --c: var(--safety); }
+[data-line="data"] { --c: var(--data); }
+[data-line="urban"] { --c: var(--urban); }
+[data-line="emerging"] { --c: var(--emerging); }
+
+/* Hero */
+.hero { padding: clamp(36px, 6vw, 72px) 0 clamp(28px, 4vw, 48px); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.hero h1 { max-width: 13ch; }
+.pi-chip { display: inline-flex; align-items: center; gap: 12px; margin-top: 30px; color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
+.pi-chip img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; background: var(--wash); }
+.pi-chip strong { color: var(--ink); display: block; font-weight: 700; }
+.pi-chip:hover strong { text-decoration: underline; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .hero h1 { max-width: 16ch; } }
+@media (max-width: 600px) { .map text { font-size: 19px; } .map .hub-s { display: none; } }
+@media (max-width: 480px) { .brand-sub { display: none; } }
+
+/* Transit map */
+.map { width: 100%; }
+.map svg { width: 100%; height: auto; overflow: visible; }
+.map .ln { fill: none; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; transition: opacity .2s; }
+.map .st { fill: var(--paper); stroke: var(--ink); stroke-width: 3; transition: opacity .2s; }
+.map .st.term { stroke-width: 3.5; }
+.map .xchg { fill: var(--paper); stroke: var(--ink); stroke-width: 3.5; }
+.map text { font-family: var(--sans); font-size: 16px; font-weight: 600; fill: var(--ink-2); transition: opacity .2s; }
+.map .hub-t { font-size: 19px; font-weight: 800; fill: var(--ink); }
+.map .hub-s { font-size: 12px; font-weight: 600; fill: var(--ink-3); }
+.map g.line { cursor: pointer; }
+.map.focus g.line:not(.on) { opacity: 0.16; }
+.map g.line { transition: opacity .2s; }
+.legend { display: grid; grid-template-columns: repeat(2, max-content); gap: 8px 10px; margin: 14px auto 0; padding: 0; list-style: none; justify-content: center; }
+
+@media (max-width: 420px) { .legend { grid-template-columns: 1fr 1fr; } .legend a { font-size: 0.85rem; padding-right: 10px; } }
+.legend a { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.92rem; padding: 7px 14px 6px 8px; border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); }
+.legend a:hover, .legend a.on { border-color: var(--c); box-shadow: inset 0 0 0 1px var(--c); }
+.legend .badge { width: 24px; height: 24px; font-size: 0.72rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .map.intro .ln { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); animation: draw 1.1s cubic-bezier(.6,.05,.3,1) forwards; animation-delay: var(--d); }
+  .map.intro .st, .map.intro .lbl { opacity: 0; animation: appear .35s ease-out forwards; animation-delay: calc(var(--d) + .75s); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+}
+
+/* Sections */
+.section { padding: clamp(44px, 6vw, 76px) 0; }
+.section.wash { background: var(--wash); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
+.section-head a { font-weight: 700; font-size: 0.98rem; }
+.page-head { padding: clamp(40px, 6vw, 68px) 0 clamp(20px, 3vw, 32px); }
+.page-head + .section { padding-top: 12px; }
+
+/* Research rows on home */
+.tracks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.tracks li { display: grid; grid-template-columns: 44px minmax(0, 15rem) minmax(0, 1fr) auto; gap: 8px 22px; align-items: start; padding: 22px 0; border-bottom: 1px solid var(--rule); position: relative; }
+.tracks h3 { font-size: 1.15rem; padding-top: 10px; }
+.tracks p { margin: 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); max-width: 62ch; padding-top: 6px; }
+.tracks .count { padding-top: 10px; font-weight: 700; font-size: 0.95rem; white-space: nowrap; }
+@media (max-width: 760px) { .tracks li { grid-template-columns: 44px minmax(0, 1fr); } .tracks p, .tracks .count { grid-column: 2; padding-top: 0; } }
+
+/* Two column home */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.feed { list-style: none; margin: 0; padding: 0; }
+.feed li { padding: 16px 0; border-top: 1px solid var(--rule); }
+.feed li:last-child { border-bottom: 1px solid var(--rule); }
+.feed time, .when { display: block; font-size: 0.86rem; font-weight: 700; color: var(--ink-3); margin-bottom: 4px; }
+.feed a.t { color: var(--ink); text-decoration: none; font-weight: 700; font-size: 1.05rem; line-height: 1.35; }
+.feed a.t:hover { text-decoration: underline; }
+.feed .src { font-family: var(--serif); color: var(--ink-2); font-style: italic; font-size: 0.98rem; margin-top: 3px; }
+
+/* Join band */
+.band { background: var(--ink); color: var(--on-ink); border-radius: 22px; padding: clamp(28px, 5vw, 54px); display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: 24px 40px; align-items: center; position: relative; overflow: hidden; }
+.band h2 { color: var(--on-ink); }
+.band p { font-family: var(--serif); font-size: 1.12rem; line-height: 1.6; margin: 12px 0 0; max-width: 54ch; opacity: .9; }
+.band .btn { border-color: var(--on-ink); }
+.band .btn.primary { background: var(--on-ink); color: var(--ink); }
+.band .btn.primary:hover { opacity: .9; }
+.band .btn.ghost { color: var(--on-ink); }
+.band .btn.ghost:hover { background: rgba(127,127,127,.18); }
+.band .btns { margin-top: 0; }
+.band .rails { position: absolute; right: -10px; top: 0; bottom: 0; width: 30%; pointer-events: none; opacity: .32; }
+.band > div { position: relative; }
+@media (max-width: 760px) { .band { grid-template-columns: 1fr; } .band .rails { display: none; } }
+
+/* Research page */
+.figure { margin: 34px 0 0; }
+.figure .plate { background: var(--plate); border: 1px solid var(--rule); border-radius: 16px; padding: clamp(8px, 2vw, 18px); }
+.figure figcaption { font-size: 0.9rem; color: var(--ink-3); margin-top: 10px; }
+.rline { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 0 22px; padding: 48px 0 8px; scroll-margin-top: calc(var(--head-h) + 16px); }
+.rline .rail { position: relative; display: flex; justify-content: center; }
+.rline .rail::after { content: ""; position: absolute; top: 52px; bottom: -8px; width: 6px; border-radius: 3px; background: var(--c); opacity: .9; }
+.rline h2 { padding-top: 6px; }
+.rline .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 44px; margin-top: 22px; }
+@media (max-width: 860px) { .rline .grid { grid-template-columns: 1fr; } .rline { grid-template-columns: 44px minmax(0,1fr); gap: 0 14px; } }
+.rline h3 { font-size: 1rem; margin-bottom: 10px; color: var(--ink-2); }
+.qs { margin: 0; padding: 0; list-style: none; font-family: var(--serif); font-size: 1.07rem; line-height: 1.55; }
+.qs li { padding: 8px 0 8px 22px; position: relative; }
+.qs li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid var(--c); background: var(--paper); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tags li { font-size: 0.92rem; font-weight: 600; padding: 7px 12px 5px; border-radius: 8px; background: var(--wash); color: var(--ink); }
+.mini-pubs { list-style: none; margin: 4px 0 0; padding: 0; }
+.mini-pubs li { padding: 10px 0; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: 1rem; line-height: 1.45; }
+.mini-pubs a { color: var(--ink); text-decoration: none; font-family: var(--sans); font-weight: 700; }
+.mini-pubs a:hover { text-decoration: underline; }
+.mini-pubs .j { color: var(--ink-3); font-style: italic; display: block; margin-top: 2px; }
+
+/* People */
+.pi { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(24px, 4vw, 52px); align-items: start; }
+.pi .photo { border-radius: 18px; overflow: hidden; background: var(--wash); aspect-ratio: 3 / 4; }
+.pi .photo img { width: 100%; height: 100%; object-fit: cover; }
+.pi .role { font-weight: 700; color: var(--ink-2); margin: 8px 0 0; font-size: 1.05rem; }
+.pi .aff { color: var(--ink-3); margin: 2px 0 0; }
+.linkrow { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 26px; padding: 0; list-style: none; }
+.linkrow a { display: inline-block; text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.92rem; padding: 8px 13px 6px; border: 1px solid var(--rule); border-radius: 999px; }
+.linkrow a:hover { border-color: var(--ink); }
+.linkrow a.cv { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+@media (max-width: 760px) { .pi { grid-template-columns: 1fr; } .pi .photo { max-width: 260px; } }
+.route { list-style: none; margin: 0; padding: 0; position: relative; }
+.route::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 4px; border-radius: 2px; background: var(--data); }
+.route li { position: relative; padding: 0 0 22px 36px; }
+.route li::before { content: ""; position: absolute; left: 0; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--paper); border: 3px solid var(--ink); }
+.route strong { display: block; font-size: 1.04rem; }
+.route span { font-family: var(--serif); color: var(--ink-2); }
+.route span.when { font-family: var(--sans); color: var(--ink-3); }
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px; }
+.person img { aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: var(--wash); width: 100%; }
+.person h3 { margin-top: 12px; font-size: 1.08rem; }
+.person p { margin: 4px 0 0; color: var(--ink-2); font-size: 0.95rem; }
+.empty { border: 2px dashed var(--rule); border-radius: 18px; padding: clamp(22px, 4vw, 36px); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 18px 26px; align-items: center; }
+.empty p { margin: 6px 0 0; font-family: var(--serif); font-size: 1.07rem; color: var(--ink-2); max-width: 56ch; }
+.empty .btns { margin: 0; }
+.seat { width: 64px; height: 64px; border-radius: 50%; border: 3px solid var(--ink); display: grid; place-items: center; font: 800 1.6rem/1 var(--sans); color: var(--ink); padding-top: 4px; }
+@media (max-width: 760px) { .empty { grid-template-columns: 1fr; } }
+.coauthors { columns: 3 200px; column-gap: 32px; list-style: none; margin: 0; padding: 0; }
+.coauthors li { break-inside: avoid; padding: 7px 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 10px; }
+.coauthors span { color: var(--ink-3); font-size: 0.92rem; white-space: nowrap; }
+
+/* Publications */
+.filters { display: grid; gap: 16px; padding: 20px; background: var(--wash); border-radius: 16px; margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; font: 600 0.93rem/1 var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); padding: 9px 14px 7px 10px; border-radius: 999px; cursor: pointer; }
+.chip:hover { border-color: var(--ink-3); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.chip .dot { width: 12px; height: 12px; }
+.chip.all { padding-left: 14px; }
+.frow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 0 12px; }
+.search:focus-within { border-color: var(--link); box-shadow: 0 0 0 2px color-mix(in srgb, var(--link) 30%, transparent); }
+.search input { flex: 1; border: 0; background: transparent; color: var(--ink); font: 400 1rem var(--sans); padding: 12px 0 10px; outline: none; min-width: 0; }
+select { font: 600 0.95rem var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 11px 12px 9px; }
+.check { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
+.check input { width: 18px; height: 18px; accent-color: var(--ink); }
+.result-count { font-size: 0.95rem; color: var(--ink-3); margin: 18px 0 0; }
+.year-group { margin-top: 30px; }
+.year-group h2 { font-size: 1.35rem; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pub { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 20px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.pub .ti { font-weight: 700; font-size: 1.06rem; line-height: 1.38; color: var(--ink); text-decoration: none; }
+.pub a.ti:hover { text-decoration: underline; color: var(--link); }
+.pub .au { font-family: var(--serif); color: var(--ink-2); margin-top: 4px; font-size: 1rem; line-height: 1.5; }
+.pub .au b { color: var(--ink); font-weight: 600; }
+.pub .jo { font-family: var(--serif); font-size: 1rem; margin-top: 2px; color: var(--ink-2); }
+.pub .jo i { color: var(--ink); }
+.pub .dots { display: flex; gap: 5px; padding-top: 6px; }
+.empty-res { padding: 30px 0; font-size: 1.05rem; }
+
+/* News */
+.news { list-style: none; margin: 0; padding: 0; }
+.news > li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 8px 32px; padding: 34px 0; border-top: 1px solid var(--rule); }
+.news time { font-weight: 800; color: var(--ink); font-size: 0.98rem; padding-top: 3px; }
+.news h2 { font-size: 1.3rem; line-height: 1.3; }
+.news .prose { margin-top: 10px; font-size: 1.07rem; }
+.news .prose p { margin: 0; }
+.news figure { margin: 18px 0 0; max-width: 680px; }
+.news figure img { border-radius: 12px; border: 1px solid var(--rule); max-height: 520px; width: auto; }
+@media (max-width: 700px) { .news > li { grid-template-columns: 1fr; } }
+
+/* Talks */
+.talks { display: grid; gap: 36px; }
+.talk { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px 36px; align-items: center; }
+.talk.noimg { grid-template-columns: 1fr; border-left: 6px solid var(--rule); padding-left: 22px; }
+.talk h3 { font-size: 1.25rem; margin-top: 4px; }
+.talk .host { font-weight: 700; color: var(--ink-2); margin-top: 8px; }
+.talk .links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-weight: 700; }
+.media { position: relative; border-radius: 14px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.media img { width: 100%; height: 100%; object-fit: cover; }
+.media iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.play { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 55%); border: 0; cursor: pointer; padding: 0; color: #fff; }
+.play span { display: inline-flex; align-items: center; gap: 10px; background: rgba(14,22,35,.86); padding: 12px 18px 10px 14px; border-radius: 999px; font: 700 0.98rem/1 var(--sans); }
+.play:hover span { background: #D43D35; }
+@media (max-width: 760px) { .talk { grid-template-columns: 1fr; } }
+.conf { list-style: none; margin: 0; padding: 0; }
+.conf li { padding: 14px 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 16px; }
+.conf .y { font-weight: 800; color: var(--ink-3); }
+.conf .ct { font-family: var(--serif); font-size: 1.04rem; line-height: 1.5; }
+.conf .cv { font-size: 0.92rem; color: var(--ink-3); margin-top: 3px; }
+
+/* Teaching & service */
+.cols-3 { columns: 2 280px; column-gap: 40px; list-style: none; margin: 0; padding: 0; }
+.cols-3 li { break-inside: avoid; padding: 9px 0; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 1.04rem; }
+.courses { list-style: none; margin: 0; padding: 0; }
+.courses li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-weight: 700; font-size: 1.05rem; }
+.courses span { color: var(--ink-3); font-weight: 600; white-space: nowrap; }
+.stack { display: grid; gap: clamp(40px, 5vw, 60px); }
+
+/* Join */
+.join-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px 56px; }
+@media (max-width: 860px) { .join-grid { grid-template-columns: 1fr; } }
+.join-grid h2 { font-size: 1.4rem; margin-bottom: 12px; }
+.roles { list-style: none; margin: 0; padding: 0; }
+.roles li { padding: 14px 0; border-top: 1px solid var(--rule); }
+.roles strong { display: block; font-size: 1.08rem; }
+.roles span { font-family: var(--serif); color: var(--ink-2); font-size: 1.03rem; }
+.steps { counter-reset: s; list-style: none; margin: 0; padding: 0; }
+.steps li { counter-increment: s; position: relative; padding: 4px 0 22px 52px; font-family: var(--serif); font-size: 1.07rem; line-height: 1.55; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--on-ink); font: 800 0.95rem/34px var(--sans); text-align: center; }
+.steps li:not(:last-child)::after { content: ""; position: absolute; left: 15px; top: 38px; bottom: 2px; width: 4px; border-radius: 2px; background: var(--rule); }
+.steps strong { font-family: var(--sans); display: block; margin-bottom: 2px; }
+.email-box { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; background: var(--wash); border-radius: 12px; padding: 12px 14px; margin-top: 10px; font-family: var(--sans); font-size: 0.98rem; }
+.email-box code { font-family: var(--sans); font-weight: 700; }
+.copy { font: 700 0.88rem var(--sans); border: 1px solid var(--rule); background: var(--paper); color: var(--ink); border-radius: 8px; padding: 6px 10px 4px; cursor: pointer; }
+details { border-top: 1px solid var(--rule); padding: 4px 0; }
+details:last-of-type { border-bottom: 1px solid var(--rule); }
+summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; padding: 14px 0; list-style-position: outside; }
+details p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; margin: 0 0 16px; color: var(--ink-2); max-width: 66ch; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px 56px; }
+@media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+.contact address { font-style: normal; font-family: var(--serif); font-size: 1.1rem; line-height: 1.6; }
+.big-mail { font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 800; color: var(--ink); text-decoration-color: var(--data); text-decoration-thickness: 3px; word-break: break-word; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--rule); margin-top: clamp(16px, 3vw, 40px); padding: 40px 0 48px; background: var(--wash); }
+.foot .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)); gap: 28px; }
+.foot h2 { font-size: 0.98rem; margin-bottom: 10px; }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot li { padding: 3px 0; }
+.foot a { color: var(--ink-2); text-decoration: none; }
+.foot a:hover { color: var(--ink); text-decoration: underline; }
+.foot p { margin: 8px 0 0; color: var(--ink-2); font-size: 0.95rem; max-width: 40ch; }
+.foot p.fine { max-width: none; }
+.foot .fine { grid-column: 1 / -1; font-size: 0.86rem; color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: 18px; margin-top: 6px; }
+@media (max-width: 760px) { .foot .wrap { grid-template-columns: 1fr 1fr; } .foot .wrap > :first-child { grid-column: 1 / -1; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+@media print { .site-head, .foot, .filters, .play { display: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main" onclick="event.preventDefault();document.getElementById('main').focus();">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="TAM Lab home">
+      <svg width="38" height="38" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="11" fill="none" stroke="var(--data)" stroke-width="3.6"/>
+        <path d="M3 3 16 16" stroke="var(--safety)" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M3 29 16 16" stroke="var(--urban)" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M30 16H16" stroke="var(--emerging)" stroke-width="3.6" stroke-linecap="round"/>
+        <circle cx="16" cy="16" r="5" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.4"/>
+      </svg>
+      <span><span class="brand-name">TAM Lab</span><span class="brand-sub">Transportation Analytics &amp; Mobility, KAIST</span></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 4h14M2 9h14M2 14h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Menu
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#research">Research</a>
+      <a href="#people">People</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#talks">Talks</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
+      <a href="#join" class="join">Join us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<footer class="foot">
+  <div class="wrap" id="foot"></div>
+</footer>
+
+<noscript><div class="wrap" style="padding:40px 0"><p>This website needs JavaScript to show its content. You can reach the lab at <a href="mailto:drtamakloe@kaist.ac.kr">drtamakloe@kaist.ac.kr</a>.</p></div></noscript>
+
+<!-- DATA-START -->
+<script src="assets/tamlab/lab-data.js"></script>
+<!-- DATA-END -->
+<script>
+(function () {
+  "use strict";
+  var D = window.TAMLAB;
+  var main = document.getElementById("main");
+  var LINES = {}; D.lines.forEach(function (l) { LINES[l.id] = l; });
+  var CODE = { safety: "S", data: "D", urban: "U", emerging: "E" };
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function fmtDate(iso, withDay) { var p = iso.split("-"); return (withDay !== false ? (+p[2]) + " " : "") + MONTHS[+p[1] - 1] + " " + p[0]; }
+  function img(src) { return "assets/tamlab/img/" + src; }
+  function badge(id, cls) { return '<span class="badge ' + (cls || "") + '" data-line="' + id + '" aria-hidden="true">' + CODE[id] + "</span>"; }
+  function boldPI(a) { return esc(a).replace(/Tamakloe,?\s*R\./, function (m) { return "<b>" + m + "</b>"; }); }
+  function papersFor(id) { return D.publications.filter(function (p) { return p.lines.indexOf(id) > -1; }); }
+  function pubLink(p) { return p.url || "https://scholar.google.com/scholar?q=" + encodeURIComponent(p.title); }
+  function ext(url) { return /^https?:/.test(url) ? ' target="_blank" rel="noopener"' : ""; }
+
+  /* ---------- Transit map ---------- */
+  function transitMap() {
+    var cx = 330, cy = 240, r = 112;
+    var lines = [
+      { id: "safety", d: "M40 58 H150 L330 240", d2: 0,
+        st: [[40, 58, "term"], [118, 58], [214, 124]],
+        lb: [[30, 38, "start", "Crash injury severity"], [199, 129, "end", "Vulnerable road users"]] },
+      { id: "urban", d: "M40 422 H150 L330 240", d2: 0.15,
+        st: [[40, 422, "term"], [118, 422], [214, 356]],
+        lb: [[30, 454, "start", "Transit station efficiency"], [199, 363, "end", "Shared mobility"]] },
+      { id: "emerging", d: "M620 240 H330", d2: 0.3,
+        st: [[620, 240, "term"], [528, 240]],
+        lb: [[628, 220, "end", "EV adoption"], [528, 272, "middle", "Automated vehicles"]] },
+      { id: "data", d: "M" + (cx) + " " + (cy - r) + " a" + r + " " + r + " 0 1 1 -0.01 0 Z", d2: 0.45, ring: true,
+        st: [[cx, cy - r], [cx, cy + r], [cx + r * Math.cos(Math.PI / 4), cy - r * Math.sin(Math.PI / 4)]],
+        lb: [[cx, cy - r - 18, "middle", "Rule mining"], [cx, cy + r + 30, "middle", "Explainable AI"], [cx + r * Math.cos(Math.PI / 4) + 16, cy - r * Math.sin(Math.PI / 4) - 8, "start", "Topic modeling"]] }
+    ];
+    // interchanges where arms cross the ring
+    var xs = [[cx - r * Math.SQRT1_2, cy - r * Math.SQRT1_2], [cx - r * Math.SQRT1_2, cy + r * Math.SQRT1_2], [cx + r, cy]];
+    var out = '<svg viewBox="0 0 660 480" role="img" aria-labelledby="map-t map-d"><title id="map-t">TAM Lab research lines</title><desc id="map-d">A transit-style map. Four research lines meet at the TAM Lab interchange: traffic safety, urban mobility, and emerging mobility run into the center, and data and AI is a circle line connecting all of them.</desc>';
+    // draw order: ring first so arms sit on top
+    [lines[3], lines[0], lines[1], lines[2]].forEach(function (L) {
+      out += '<g class="line" data-line="' + L.id + '" tabindex="-1">';
+      out += '<path class="ln" d="' + L.d + '" stroke="var(--' + L.id + ')" style="--d:' + L.d2 + 's"/>';
+      L.st.forEach(function (s) { out += '<circle class="st ' + (s[2] || "") + '" cx="' + s[0].toFixed(1) + '" cy="' + s[1].toFixed(1) + '" r="' + (s[2] ? 9 : 7.5) + '" style="--d:' + L.d2 + 's"/>'; });
+      L.lb.forEach(function (b) { out += '<text class="lbl" x="' + b[0].toFixed(1) + '" y="' + b[1].toFixed(1) + '" text-anchor="' + b[2] + '" style="--d:' + L.d2 + 's">' + b[3] + "</text>"; });
+      out += "</g>";
+    });
+    xs.forEach(function (p) { out += '<circle class="xchg st" cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="10" style="--d:.5s"/>'; });
+    out += '<g class="st" style="--d:.55s;stroke:none;fill:none"><rect class="xchg" x="' + (cx - 58) + '" y="' + (cy - 30) + '" width="116" height="60" rx="30"/>' +
+      '<text class="hub-t" x="' + cx + '" y="' + (cy + 2) + '" text-anchor="middle">TAM Lab</text>' +
+      '<text class="hub-s" x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle">KAIST, Daejeon</text></g>';
+    out += "</svg>";
+    return out;
+  }
+
+  function wireMap(root) {
+    var map = root.querySelector(".map"); if (!map) return;
+    map.querySelectorAll(".ln").forEach(function (p) { try { p.style.setProperty("--len", Math.ceil(p.getTotalLength()) + 1); } catch (e) {} });
+    if (!sessionStorageSafe("tam-intro")) { map.classList.add("intro"); }
+    function focusLine(id) {
+      map.classList.toggle("focus", !!id);
+      map.querySelectorAll("g.line").forEach(function (g) { g.classList.toggle("on", g.getAttribute("data-line") === id); });
+      map.querySelectorAll(".legend a").forEach(function (a) { a.classList.toggle("on", a.getAttribute("data-line") === id); });
+    }
+    map.querySelectorAll("g.line").forEach(function (g) {
+      var id = g.getAttribute("data-line");
+      g.addEventListener("mouseenter", function () { focusLine(id); });
+      g.addEventListener("mouseleave", function () { focusLine(null); });
+      g.addEventListener("click", function () { location.hash = id; });
+    });
+    map.querySelectorAll(".legend a").forEach(function (a) {
+      var id = a.getAttribute("data-line");
+      ["mouseenter", "focus"].forEach(function (e) { a.addEventListener(e, function () { focusLine(id); }); });
+      ["mouseleave", "blur"].forEach(function (e) { a.addEventListener(e, function () { focusLine(null); }); });
+    });
+  }
+  function sessionStorageSafe(k) { try { var v = sessionStorage.getItem(k); sessionStorage.setItem(k, "1"); return v; } catch (e) { return null; } }
+
+  /* ---------- Views ---------- */
+  var V = {};
+
+  V.home = function () {
+    var pubs = D.publications.slice(0, 5);
+    var news = D.news.slice(0, 4);
+    return '' +
+    '<section class="hero"><div class="wrap">' +
+      '<div>' +
+        '<h1>Smarter, safer, fairer mobility</h1>' +
+        '<p class="lede">The Transportation Analytics &amp; Mobility Lab is an interdisciplinary research group at KAIST’s ' + esc(D.lab.school) + '. We combine statistics, machine learning, and transportation engineering to understand why crashes happen, how people take up new mobility technologies, and how transit can serve cities better.</p>' +
+        '<div class="btns"><a class="btn primary" href="#research">Explore our research</a><a class="btn ghost" href="#join">Join the lab</a></div>' +
+        '<a class="pi-chip" href="#people"><img src="' + esc(D.pi.photo) + '" alt="" width="44" height="44"><span><strong>Led by ' + esc(D.pi.shortName) + '</strong>' + esc(D.pi.role.replace(" and Lab Director", "")) + ', KAIST</span></a>' +
+      '</div>' +
+      '<div class="map">' + transitMap() +
+        '<ul class="legend">' + D.lines.map(function (l) { return '<li><a href="#' + l.id + '" data-line="' + l.id + '">' + badge(l.id) + esc(l.name) + "</a></li>"; }).join("") + "</ul>" +
+      '</div>' +
+    '</div></section>' +
+
+    '<section class="section"><div class="wrap">' +
+      '<div class="section-head"><h2>Four research lines, one interchange</h2><a href="#research">How the lines connect</a></div>' +
+      '<ul class="tracks">' + D.lines.map(function (l) {
+        var n = papersFor(l.id).length;
+        return '<li data-line="' + l.id + '">' + badge(l.id, "lg") + '<h3><a href="#' + l.id + '" style="color:inherit;text-decoration:none">' + esc(l.long) + '</a></h3><p>' + l.summary + '</p><a class="count" href="#publications-' + l.id + '">' + n + " papers</a></li>";
+      }).join("") + '</ul>' +
+    '</div></section>' +
+
+    '<section class="section wash"><div class="wrap split">' +
+      '<div><div class="section-head"><h2>Lab news</h2><a href="#news">All news</a></div><ul class="feed">' +
+        news.map(function (n, i) { return '<li><time datetime="' + n.date + '">' + fmtDate(n.date) + '</time><a class="t" href="#news">' + esc(n.title) + "</a></li>"; }).join("") +
+      '</ul></div>' +
+      '<div><div class="section-head"><h2>Recent papers</h2><a href="#publications">All ' + D.publications.length + ' papers</a></div><ul class="feed">' +
+        pubs.map(function (p) { return '<li><time>' + p.year + '</time><a class="t" href="' + esc(pubLink(p)) + '"' + ext(pubLink(p)) + '>' + esc(p.title) + '</a><div class="src">' + esc(p.journal) + "</div></li>"; }).join("") +
+      '</ul></div>' +
+    '</div></section>' +
+
+    '<section class="section"><div class="wrap">' +
+      '<div class="band">' +
+        '<svg class="rails" viewBox="0 0 300 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><path d="M40 -10 V120 L190 270 V320" fill="none" stroke="var(--safety)" stroke-width="10" stroke-linecap="round"/><path d="M90 -10 V100 L240 250 V320" fill="none" stroke="var(--data)" stroke-width="10" stroke-linecap="round"/><path d="M140 -10 V80 L290 230 V320" fill="none" stroke="var(--urban)" stroke-width="10" stroke-linecap="round"/><path d="M190 -10 V60 L340 210" fill="none" stroke="var(--emerging)" stroke-width="10" stroke-linecap="round"/></svg>' +
+        '<div><h2>Thinking about graduate school?</h2><p>We’re looking for curious MS and PhD students, interns, and visiting researchers who want their analysis to make streets safer and mobility fairer. A transportation degree is not required.</p></div>' +
+        '<div class="btns"><a class="btn primary" href="#join">See open positions</a><a class="btn ghost" href="mailto:' + esc(D.lab.email) + '">Email the lab</a></div>' +
+      '</div>' +
+    '</div></section>';
+  };
+
+  V.research = function () {
+    return '' +
+    '<header class="page-head"><div class="wrap">' +
+      '<h1>Research</h1>' +
+      '<p class="lede">Our work is interdisciplinary by design. Heterogeneity-aware models, pattern discovery, and spatiotemporal analysis help us find high-risk crash mechanisms and explain injury outcomes, with particular attention to vulnerable road users. The same tools let us study human–automation interaction, the adoption of electric and automated vehicles, and the performance of integrated public transport.</p>' +
+    '</div></header>' +
+    '<section class="section"><div class="wrap">' +
+      '<figure class="figure" style="margin-top:0"><div class="plate"><img src="' + img("research-areas.jpg") + '" alt="Diagram: data-driven transportation safety and mobility at the center, surrounded by four research areas: traffic safety and crash injury severity analysis; advanced data analytics, machine learning, and pattern discovery; urban mobility systems, public transport, and infrastructure performance; and emerging mobility technologies, automation, and electric vehicle adoption." loading="lazy" width="1600" height="900"></div><figcaption>The four research lines and the methods behind each.</figcaption></figure>' +
+      (function () { var used = {}; return D.lines.map(function (l) {
+        var recent = papersFor(l.id).filter(function (p) { return !used[p.title]; }).slice(0, 3);
+        recent.forEach(function (p) { used[p.title] = 1; });
+        return '<article class="rline" id="' + l.id + '" data-line="' + l.id + '">' +
+          '<div class="rail">' + badge(l.id, "lg") + '</div>' +
+          '<div><h2>' + esc(l.long) + '</h2>' +
+            '<p class="prose" style="margin:14px 0 0">' + l.summary + '</p>' +
+            '<div class="grid">' +
+              '<div><h3>Questions we ask</h3><ul class="qs">' + l.questions.map(function (q) { return "<li>" + q + "</li>"; }).join("") + '</ul></div>' +
+              '<div><h3>Methods</h3><ul class="tags">' + l.methods.map(function (m) { return "<li>" + m + "</li>"; }).join("") + '</ul>' +
+                '<h3 style="margin-top:24px">Recent papers</h3><ul class="mini-pubs">' + recent.map(function (p) { return '<li><a href="' + esc(pubLink(p)) + '"' + ext(pubLink(p)) + '>' + esc(p.title) + '</a><span class="j">' + esc(p.journal) + ", " + p.year + "</span></li>"; }).join("") + '</ul>' +
+                '<p style="margin:12px 0 0;font-weight:700"><a href="#publications-' + l.id + '">All ' + papersFor(l.id).length + ' papers in this line</a></p>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+      }).join(""); })() +
+      '<div style="margin-top:64px"><h2>How the lines connect</h2><p class="prose" style="margin-top:12px">Most projects sit where two or more lines cross. A study of e-scooter crashes, for example, draws on safety modeling, machine learning, and emerging mobility at once.</p>' +
+      '<figure class="figure"><div class="plate"><img src="' + img("research-venn.jpg") + '" alt="Venn diagram showing overlaps between the four research areas, with example research topics at each intersection, such as safety risk modeling for EVs, ADAS, AVs and micromobility, and vulnerable road user injury outcomes linked to streetscape and station-area design." loading="lazy" width="1600" height="900"></div><figcaption>Research topics at the intersections of the four lines.</figcaption></figure></div>' +
+      '<div style="margin-top:56px"><h2>Tools we use</h2><ul class="tags" style="margin-top:16px">' + D.tools.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + '</ul></div>' +
+      (D.extras && D.extras.length ? '<div style="margin-top:56px"><h2>Interactive materials</h2><ul class="mini-pubs" style="margin-top:14px">' + D.extras.map(function (x) { return '<li><a href="' + esc(x.url) + '">' + esc(x.title) + '</a><span class="j">' + esc(x.note) + "</span></li>"; }).join("") + "</ul></div>" : "") +
+    '</div></section>';
+  };
+
+  V.people = function () {
+    var order = ["Postdoctoral researcher", "PhD student", "MS student", "Research intern", "Visiting researcher"];
+    var members = D.members.slice().sort(function (a, b) { return order.indexOf(a.role) - order.indexOf(b.role); });
+    // frequent co-authors, computed from the publication list
+    var counts = {};
+    D.publications.forEach(function (p) {
+      p.authors.replace(/\s*&\s*/g, " ").split(/\.,\s*/).forEach(function (a) {
+        a = a.trim().replace(/\.$/, "") ; if (!a || /Tamakloe/.test(a)) return;
+        var m = a.match(/^([^,]+),\s*(.+)$/); if (!m) return;
+        var name = m[2].replace(/\s+/g, " ").trim() + (m[2].trim().slice(-1) === "." ? "" : ".") + " " + m[1].trim();
+        counts[name] = (counts[name] || 0) + 1;
+      });
+    });
+    var co = Object.keys(counts).map(function (k) { return [k, counts[k]]; }).filter(function (x) { return x[1] > 1; }).sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0]); }).slice(0, 15);
+
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>People</h1><p class="lede">TAM Lab is a young, growing group. Here’s who we are and who we work with.</p></div></header>' +
+    '<section class="section"><div class="wrap stack">' +
+      '<div class="pi">' +
+        '<div class="photo"><img src="' + esc(D.pi.photo) + '" alt="Portrait of ' + esc(D.pi.shortName) + '" width="900" height="1200"></div>' +
+        '<div><h2>' + esc(D.pi.name) + '</h2><p class="role">' + esc(D.pi.role) + '</p><p class="aff">' + esc(D.lab.school) + ', ' + esc(D.lab.university) + '</p>' +
+          '<ul class="linkrow"><li><a class="cv" href="' + esc(D.pi.cv) + '">Download CV (PDF)</a></li><li><a href="mailto:' + esc(D.lab.email) + '">Email</a></li>' +
+            D.pi.links.map(function (l) { return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a></li>"; }).join("") + '</ul>' +
+          '<div class="prose">' + D.pi.bio.map(function (p) { return "<p>" + p + "</p>"; }).join("") + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div><h2 style="margin-bottom:22px">Career route</h2><ul class="route">' + D.pi.path.map(function (s) { return '<li><span class="when">' + s.when + '</span><strong>' + s.what + '</strong><span>' + s.where + "</span></li>"; }).join("") + '</ul></div>' +
+      '<div><h2 style="margin-bottom:22px">Students and researchers</h2>' +
+        (members.length ? '<div class="people">' + members.map(function (m) {
+          return '<div class="person">' + (m.photo ? '<img src="' + esc(m.photo) + '" alt="" loading="lazy">' : "") + '<h3>' + (m.link ? '<a href="' + esc(m.link) + '">' + esc(m.name) + "</a>" : esc(m.name)) + '</h3><p><strong>' + esc(m.role) + '</strong>' + (m.since ? ", since " + m.since : "") + '</p>' + (m.topic ? "<p>" + esc(m.topic) + "</p>" : "") + (m.email ? '<p><a href="mailto:' + esc(m.email) + '">' + esc(m.email) + "</a></p>" : "") + "</div>";
+        }).join("") + "</div>" : "") +
+        '<div class="empty" style="margin-top:' + (members.length ? "28px" : "0") + '"><div class="seat" aria-hidden="true">+</div><div><h3>This seat is open</h3><p>We’re building our team of MS and PhD students, interns, and visiting researchers. If the research here excites you, we’d like to hear from you.</p></div><div class="btns"><a class="btn primary" href="#join">How to join</a></div></div>' +
+      '</div>' +
+      (D.alumni.length ? '<div><h2 style="margin-bottom:16px">Alumni</h2><ul class="coauthors">' + D.alumni.map(function (a) { return "<li>" + esc(a.name) + "<span>" + esc(a.now || a.role) + "</span></li>"; }).join("") + "</ul></div>" : "") +
+      '<div><h2>Frequent co-authors</h2><p class="lede" style="margin:10px 0 22px;font-size:1.08rem">Researchers we have published with most often, counted from our journal papers.</p><ul class="coauthors">' + co.map(function (c) { return "<li>" + esc(c[0]) + "<span>" + c[1] + " papers</span></li>"; }).join("") + '</ul></div>' +
+    '</div></section>';
+  };
+
+  var pubState = { line: "all", year: "all", q: "", first: false };
+  V.publications = function (sub) {
+    pubState = { line: LINES[sub] ? sub : "all", year: "all", q: "", first: false };
+    var years = []; D.publications.forEach(function (p) { if (years.indexOf(p.year) < 0) years.push(p.year); });
+    var firstCount = D.publications.filter(function (p) { return /^Tamakloe/.test(p.authors); }).length;
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>Publications</h1><p class="lede">' + D.publications.length + ' peer-reviewed journal articles, ' + firstCount + ' of them first-authored by Dr. Tamakloe. For citation counts, see <a href="' + esc(D.pi.links[0].url) + '" target="_blank" rel="noopener">Google Scholar</a>.</p></div></header>' +
+    '<section class="section"><div class="wrap">' +
+      '<div class="filters" role="search">' +
+        '<div class="chips" role="group" aria-label="Filter by research line">' +
+          '<button class="chip all" data-f="all" aria-pressed="true">All lines</button>' +
+          D.lines.map(function (l) { return '<button class="chip" data-f="' + l.id + '" data-line="' + l.id + '" aria-pressed="false"><span class="dot" data-line="' + l.id + '"></span>' + esc(l.name) + "</button>"; }).join("") +
+        '</div>' +
+        '<div class="frow">' +
+          '<label class="search"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr">Search publications</span><input type="search" id="pq" placeholder="Search titles, authors, journals"></label>' +
+          '<label><span class="sr">Year</span><select id="py"><option value="all">All years</option>' + years.map(function (y) { return '<option value="' + y + '">' + y + "</option>"; }).join("") + '</select></label>' +
+          '<label class="check"><input type="checkbox" id="pf"> First-authored only</label>' +
+        '</div>' +
+      '</div>' +
+      '<p class="result-count" id="pcount" aria-live="polite"></p>' +
+      '<div id="plist"></div>' +
+      (D.underReview && D.underReview.length ? '<div class="year-group"><h2>Under review</h2><ul class="pubs">' + D.underReview.map(function (u) { return '<li class="pub"><div><span class="ti">' + esc(u.title) + '</span><div class="au">' + boldPI(u.authors) + "</div></div></li>"; }).join("") + "</ul></div>" : "") +
+    '</div></section>';
+  };
+  function renderPubs() {
+    var q = pubState.q.toLowerCase().trim();
+    var list = D.publications.filter(function (p) {
+      if (pubState.line !== "all" && p.lines.indexOf(pubState.line) < 0) return false;
+      if (pubState.year !== "all" && String(p.year) !== pubState.year) return false;
+      if (pubState.first && !/^Tamakloe/.test(p.authors)) return false;
+      if (q && (p.title + " " + p.authors + " " + p.journal).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    var by = {}, ys = [];
+    list.forEach(function (p) { if (!by[p.year]) { by[p.year] = []; ys.push(p.year); } by[p.year].push(p); });
+    document.getElementById("pcount").textContent = list.length === D.publications.length ? "Showing all " + list.length + " papers" : "Showing " + list.length + " of " + D.publications.length + " papers";
+    document.getElementById("plist").innerHTML = list.length ? ys.map(function (y) {
+      return '<div class="year-group"><h2>' + y + '</h2><ul class="pubs">' + by[y].map(function (p) {
+        var u = pubLink(p);
+        return '<li class="pub"><div><a class="ti" href="' + esc(u) + '"' + ext(u) + '>' + esc(p.title) + '</a><div class="au">' + boldPI(p.authors) + '</div><div class="jo"><i>' + esc(p.journal) + "</i>" + (p.details ? ", " + esc(p.details) : "") + '</div></div>' +
+          '<div class="dots">' + p.lines.map(function (l) { return '<span class="dot" data-line="' + l + '" title="' + esc(LINES[l].name) + '"></span><span class="sr">' + esc(LINES[l].name) + "</span>"; }).join("") + "</div></li>";
+      }).join("") + "</ul></div>";
+    }).join("") : '<p class="empty-res">No papers match these filters. <a href="#publications" id="pclear">Clear filters</a> to see all ' + D.publications.length + " papers.</p>";
+    var c = document.getElementById("pclear"); if (c) c.addEventListener("click", function (e) { e.preventDefault(); resetPubs(); });
+  }
+  function resetPubs() {
+    pubState = { line: "all", year: "all", q: "", first: false };
+    document.getElementById("pq").value = ""; document.getElementById("py").value = "all"; document.getElementById("pf").checked = false;
+    syncChips(); renderPubs();
+  }
+  function syncChips() { document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(c.getAttribute("data-f") === pubState.line)); }); }
+  function wirePubs() {
+    var line = pubState.line;
+    syncChips();
+    document.querySelectorAll(".chip").forEach(function (c) { c.addEventListener("click", function () { pubState.line = c.getAttribute("data-f"); syncChips(); renderPubs(); }); });
+    document.getElementById("pq").addEventListener("input", function (e) { pubState.q = e.target.value; renderPubs(); });
+    document.getElementById("py").addEventListener("change", function (e) { pubState.year = e.target.value; renderPubs(); });
+    document.getElementById("pf").addEventListener("change", function (e) { pubState.first = e.target.checked; renderPubs(); });
+    renderPubs();
+  }
+
+  V.news = function () {
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>News</h1><p class="lede">Papers, awards, talks, and milestones from the lab.</p></div></header>' +
+    '<section class="section"><div class="wrap"><ul class="news">' + D.news.map(function (n) {
+      return '<li><time datetime="' + n.date + '">' + fmtDate(n.date) + '</time><div><h2>' + esc(n.title) + '</h2><div class="prose"><p>' + n.body + '</p></div>' +
+        (n.img ? '<figure><img src="' + img(n.img) + '" alt="' + esc(n.alt || "Photo: " + n.title) + '" loading="lazy"></figure>' : "") + "</div></li>";
+    }).join("") + '</ul></div></section>';
+  };
+
+  V.talks = function () {
+    var groups = {}; var order = [];
+    D.conferences.forEach(function (c) { var k = c.year || "Earlier"; if (!groups[k]) { groups[k] = []; order.push(k); } groups[k].push(c); });
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>Talks</h1><p class="lede">Invited talks, recorded seminars, and conference presentations.</p></div></header>' +
+    '<section class="section"><div class="wrap stack">' +
+      '<div><h2 style="margin-bottom:28px">Invited talks</h2><div class="talks">' + D.invitedTalks.map(function (t, i) {
+        var media = "";
+        if (t.img) {
+          media = '<div class="media" data-vid="' + esc(t.video) + '"><img src="' + img(t.img) + '" alt="Title slide: ' + esc(t.title) + '" loading="lazy">' +
+            (t.video ? '<button class="play" aria-label="Play the recording of ' + esc(t.title) + '"><span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5v13l11-6.5z" fill="currentColor"/></svg>Play recording</span></button>' : "") + "</div>";
+        }
+        return '<article class="talk' + (t.img ? "" : " noimg") + '">' + media + '<div><span class="when">' + fmtDate(t.date) + '</span><h3>' + esc(t.title) + '</h3><p class="host" style="margin-bottom:0">' + esc(t.host) + ", " + esc(t.place) + '</p>' +
+          ((t.video || t.read) ? '<div class="links">' + (t.video ? '<a href="https://www.youtube.com/watch?v=' + esc(t.video) + '" target="_blank" rel="noopener">Watch on YouTube</a>' : "") + (t.read ? '<a href="' + esc(t.read) + '" target="_blank" rel="noopener">Event page</a>' : "") + "</div>" : "") +
+          "</div></article>";
+      }).join("") + '</div></div>' +
+      '<div><h2 style="margin-bottom:18px">Conference presentations</h2><ul class="conf">' + order.map(function (k) {
+        return groups[k].map(function (c, i) { return '<li><span class="y">' + (i === 0 ? k : '<span class="sr">' + k + "</span>") + '</span><div><div class="ct">' + (c.title ? esc(c.title) : '<span class="muted">Presentation</span>') + '</div><div class="cv">' + esc(c.venue) + ", " + esc(c.place) + "</div></div></li>"; }).join("");
+      }).join("") + '</ul></div>' +
+    '</div></section>';
+  };
+  function wireTalks() {
+    document.querySelectorAll(".media .play").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var box = b.parentNode, id = box.getAttribute("data-vid");
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0";
+        f.title = "Recorded talk"; f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; f.allowFullscreen = true;
+        b.remove(); box.appendChild(f); f.focus();
+      });
+    });
+  }
+
+  V.teaching = function () {
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>Teaching and service</h1><p class="lede">Courses taught, journals we review for, and the communities we serve.</p></div></header>' +
+    '<section class="section"><div class="wrap stack">' +
+      '<div><h2 style="margin-bottom:14px">Courses</h2><ul class="courses">' + D.courses.map(function (c) { return "<li>" + esc(c.title) + "<span>" + esc(c.term) + "</span></li>"; }).join("") + '</ul></div>' +
+      '<div><h2>Peer review</h2><p class="lede" style="margin:10px 0 20px;font-size:1.08rem">Dr. Tamakloe reviews for ' + D.reviewing.length + ' journals, including:</p><ul class="cols-3">' + D.reviewing.map(function (j) { return "<li>" + esc(j) + "</li>"; }).join("") + '</ul></div>' +
+      '<div><h2 style="margin-bottom:14px">Community service</h2><ul class="roles">' + D.service.map(function (s) { return "<li><strong>" + esc(s.role) + "</strong><span>" + esc(s.org) + "</span></li>"; }).join("") + '</ul></div>' +
+    '</div></section>';
+  };
+
+  V.join = function () {
+    var subj = "[TAM Lab] Prospective PhD student: Your name";
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>Join TAM Lab</h1><p class="lede">We welcome students who want their analysis to make streets safer and mobility fairer. You don’t need a transportation degree to start. Strong curiosity and comfort with data matter more, and our director began in statistics himself.</p></div></header>' +
+    '<section class="section"><div class="wrap stack">' +
+      '<div class="join-grid">' +
+        '<div><h2>Who we’re looking for</h2><ul class="roles">' +
+          '<li><strong>MS and PhD students</strong><span>Apply through KAIST graduate admissions after contacting us about fit and timing.</span></li>' +
+          '<li><strong>Research interns</strong><span>Undergraduates who want hands-on research experience on a real project.</span></li>' +
+          '<li><strong>Postdocs and visiting researchers</strong><span>Researchers with their own funding or fellowship plans who want to collaborate.</span></li>' +
+        '</ul></div>' +
+        '<div><h2>Backgrounds that fit</h2><ul class="tags" style="margin-top:14px">' + ["Transportation or civil engineering", "Statistics or mathematics", "Computer science or data science", "Urban planning", "Economics", "Psychology or human factors"].map(function (t) { return "<li>" + t + "</li>"; }).join("") + '</ul>' +
+          '<h2 style="margin-top:34px">What you’ll learn</h2><ul class="qs" data-line="data" style="margin-top:6px">' +
+            '<li>Discrete choice and econometric models for safety and travel behavior</li>' +
+            '<li>Machine learning, rule mining, and explainable AI in Python and R</li>' +
+            '<li>GIS and spatial analysis of crashes, stations, and networks</li>' +
+            '<li>How to design a study, write it up, and publish it in leading transportation journals</li>' +
+          '</ul></div>' +
+      '</div>' +
+      '<div class="join-grid">' +
+        '<div><h2>How to apply</h2><ol class="steps">' +
+          '<li><strong>Read a few of our papers</strong>Pick one or two from the <a href="#publications">publications list</a> that interest you and think about what you would ask next.</li>' +
+          '<li><strong>Email the lab</strong>Send your CV, transcripts, and a one-page statement on which research line interests you and why. A writing or code sample is welcome but optional.' +
+            '<div class="email-box"><span>Subject line:</span><code id="subj">' + esc(subj) + '</code><button class="copy" data-copy="subj">Copy</button></div></li>' +
+          '<li><strong>Talk with us</strong>If there’s a good fit, we’ll set up a short video call to discuss projects and timing.</li>' +
+          '<li><strong>Apply to KAIST</strong>Submit your application through <a href="https://admission.kaist.ac.kr/" target="_blank" rel="noopener">KAIST graduate admissions</a> for the <a href="' + esc(D.lab.schoolUrl) + '" target="_blank" rel="noopener">' + esc(D.lab.school) + '</a>.</li>' +
+        '</ol></div>' +
+        '<div><h2>Common questions</h2>' +
+          '<details><summary>Do I need research experience already?</summary><p>No. A strong quantitative background and genuine interest matter most. Mention any projects, theses, or internships, even small ones.</p></details>' +
+          '<details><summary>I’m not sure which research line fits me.</summary><p>That’s normal. Tell us what problems you care about, such as pedestrian safety or electric vehicles, and we’ll talk through where they fit. Many projects cross more than one line.</p></details>' +
+          '<details><summary>Can international students apply?</summary><p>Yes. KAIST admits international graduate students every year, and the lab already works with collaborators across Asia, Africa, and North America.</p></details>' +
+          '<details><summary>How soon will I hear back?</summary><p>We read every email. If you haven’t heard back within two weeks, a short follow-up is welcome.</p></details>' +
+        '</div>' +
+      '</div>' +
+      '<div class="band"><div><h2>Ready to reach out?</h2><p>Email ' + esc(D.lab.email) + ' with your CV and a short note about what you’d like to work on.</p></div><div class="btns"><a class="btn primary" href="mailto:' + esc(D.lab.email) + "?subject=" + encodeURIComponent(subj) + '">Email the lab</a></div></div>' +
+    '</div></section>';
+  };
+  function wireJoin() {
+    document.querySelectorAll(".copy").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var t = document.getElementById(b.getAttribute("data-copy")).textContent;
+        var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600); };
+        if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { b.textContent = "Select and copy"; }); else b.textContent = "Select and copy";
+      });
+    });
+  }
+
+  V.contact = function () {
+    return '' +
+    '<header class="page-head"><div class="wrap"><h1>Contact</h1><p class="lede">For research collaborations, student inquiries, and speaking invitations, email is the quickest way to reach us.</p></div></header>' +
+    '<section class="section"><div class="wrap contact">' +
+      '<div><h2 style="font-size:1.1rem;margin-bottom:8px">Email</h2><a class="big-mail" href="mailto:' + esc(D.lab.email) + '">' + esc(D.lab.email) + '</a>' +
+        '<h2 style="font-size:1.1rem;margin:34px 0 8px">Find us online</h2><ul class="linkrow" style="margin-top:6px">' + D.pi.links.map(function (l) { return '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a></li>"; }).join("") + '</ul></div>' +
+      '<div><h2 style="font-size:1.1rem;margin-bottom:8px">Address</h2><address>' + D.lab.address.map(esc).join("<br>") + '</address>' +
+        '<p style="margin-top:16px"><a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent("KAIST Munji Campus, 193 Munji-ro, Yuseong-gu, Daejeon") + '" target="_blank" rel="noopener">Open in Google Maps</a></p></div>' +
+    '</div></section>';
+  };
+
+  function footer() {
+    document.getElementById("foot").innerHTML =
+      '<div><a class="brand" href="#home"><span><span class="brand-name">TAM Lab</span><span class="brand-sub">' + esc(D.lab.name) + '</span></span></a><p>' + esc(D.lab.school) + ", " + esc(D.lab.universityLong) + ', Daejeon, Republic of Korea</p></div>' +
+      '<div><h2>Explore</h2><ul><li><a href="#research">Research</a></li><li><a href="#people">People</a></li><li><a href="#publications">Publications</a></li><li><a href="#news">News</a></li><li><a href="#talks">Talks</a></li></ul></div>' +
+      '<div><h2>Connect</h2><ul><li><a href="#join">Join us</a></li><li><a href="mailto:' + esc(D.lab.email) + '">' + esc(D.lab.email) + '</a></li><li><a href="' + esc(D.pi.links[0].url) + '" target="_blank" rel="noopener">Google Scholar</a></li><li><a href="' + esc(D.pi.cv) + '">CV (PDF)</a></li></ul></div>' +
+      '<p class="fine">© ' + new Date().getFullYear() + " " + esc(D.lab.name) + ". Last updated " + fmtDate(D.lastUpdated) + ".</p>";
+  }
+
+  /* ---------- Router ---------- */
+  var TITLES = { home: "", research: "Research", people: "People", publications: "Publications", news: "News", talks: "Talks", teaching: "Teaching and service", join: "Join us", contact: "Contact" };
+  var ALIASES = { aboutme: "people", education: "people", cv: "people", videos: "talks", conferences: "talks", journals: "teaching", volunteer: "teaching", service: "teaching" };
+  var current = null;
+  function route() {
+    var h = decodeURIComponent((location.hash || "").replace(/^#/, "")) || "home";
+    var view = h, sub = null, anchor = null;
+    if (LINES[h]) { view = "research"; anchor = h; }
+    else if (/^publications-/.test(h)) { view = "publications"; sub = h.split("-")[1]; }
+    else if (ALIASES[h]) { view = ALIASES[h]; }
+    if (!V[view]) { view = "home"; }
+    var key = view + "|" + (sub || "");
+    if (key !== current) {
+      main.innerHTML = V[view](sub);
+      current = key;
+      if (view === "home") wireMap(main);
+      if (view === "publications") wirePubs();
+      if (view === "talks") wireTalks();
+      if (view === "join") wireJoin();
+      document.title = (TITLES[view] ? TITLES[view] + " | " : "") + "TAM Lab | Transportation Analytics & Mobility Lab, KAIST";
+      document.querySelectorAll(".nav a").forEach(function (a) { var on = a.getAttribute("href") === "#" + view; if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+      if (!anchor) { window.scrollTo(0, 0); if (route.started) { var h1 = main.querySelector("h1"); if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); } } }
+    }
+    if (anchor) { var el = document.getElementById(anchor); if (el) setTimeout(function () { el.scrollIntoView({ block: "start" }); }, 0); }
+    route.started = true;
+    closeMenu();
+  }
+  var menuBtn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+  function closeMenu() { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  menuBtn.addEventListener("click", function () { var o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", String(o)); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+  window.addEventListener("hashchange", route);
+  footer();
+  route();
+})();
+</script>
+</body>
+</html>
