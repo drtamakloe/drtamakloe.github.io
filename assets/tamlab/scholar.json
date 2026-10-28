@@ -1,0 +1,326 @@
+{
+ "source": "Google Scholar",
+ "profile": "https://scholar.google.com/citations?user=2V3gP2EAAAAJ",
+ "updated": "2026-10-28",
+ "citations": null,
+ "hIndex": null,
+ "i10Index": null,
+ "note": "Starter data copied from the Google Scholar profile on 28 Oct 2026. The weekly GitHub Action replaces this file and adds the totals.",
+ "publications": [
+  {
+   "title": "Fatal distracted driving pedestrian-involved crashes in Ghana: Exploring cluster-specific factor associations using cluster correspondence analysis",
+   "year": "2026",
+   "citations": 1
+  },
+  {
+   "title": "Elderly pedestrian safety in silver zones: A temporal instability analysis of injury severity determinants",
+   "year": "2026",
+   "citations": 0
+  },
+  {
+   "title": "Built environment determinants of e-scooter route deviations: A macro-and micro-scale analysis",
+   "year": "2026",
+   "citations": 0
+  },
+  {
+   "title": "How vehicle-to-grid configurations shape plug-in electric vehicle purchase intentions: Evidence of non-transferable effects",
+   "year": "2026",
+   "citations": 1
+  },
+  {
+   "title": "Temporal dynamics in barrier-involved crashes: Determining shifts in driving behavior and injury risk across multi-year periods",
+   "year": "2026",
+   "citations": 1
+  },
+  {
+   "title": "Determinants of battery electric vehicle adoption concerns: insights from commercial fleet owners",
+   "year": "2026",
+   "citations": 3
+  },
+  {
+   "title": "Does the streetscape built environment matter in explaining crash injury severity among older adults?",
+   "year": "2026",
+   "citations": 18
+  },
+  {
+   "title": "Variability of factors driving shared autonomous vehicle adoption: A cross-group analysis based on local ride-sharing access and historical experience",
+   "year": "2026",
+   "citations": 0
+  },
+  {
+   "title": "Factors associated with incentive-prioritizing electric vehicle buyers",
+   "year": "2026",
+   "citations": 1
+  },
+  {
+   "title": "Predicting Crash Severity using Naturalistic Driving Data and Neural Networks",
+   "year": "2026",
+   "citations": 2
+  },
+  {
+   "title": "Physics-guided estimation of freight vehicle loading status using digital tachograph data",
+   "year": "2026",
+   "citations": 0
+  },
+  {
+   "title": "Association Patterns of Behavioral and Key Factors in SUV-Type Involved Pedestrian Crashes",
+   "year": "2026",
+   "citations": 0
+  },
+  {
+   "title": "Temporal stability analysis of crash injury severity in school zones: a mixed logit modeling approach",
+   "year": "2025",
+   "citations": 5
+  },
+  {
+   "title": "Impact of temporal, spatial, and roadway factors on driver overrides in Level 2 automation: A bivariate binary probit model analysis",
+   "year": "2025",
+   "citations": 0
+  },
+  {
+   "title": "Uncovering individual heterogeneity in pedestrian crash severity with mixed logit models: a louisiana case study",
+   "year": "2025",
+   "citations": 3
+  },
+  {
+   "title": "Pattern recognition in crash clusters involving vehicles with advanced driving technologies",
+   "year": "2025",
+   "citations": 12
+  },
+  {
+   "title": "Assessing the factors associated with pedestrian injury severity in hit-and-run crashes in Ghana",
+   "year": "2025",
+   "citations": 14
+  },
+  {
+   "title": "Will EV Users Continue Using Their Vehicles Despite Fire Risks?",
+   "year": "2025",
+   "citations": 0
+  },
+  {
+   "title": "Will the widespread driverless passenger vehicles help the elderly and people with disabilities live more independently? Insights from a nationwide survey",
+   "year": "2025",
+   "citations": 7
+  },
+  {
+   "title": "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
+   "year": "2025",
+   "citations": 19
+  },
+  {
+   "title": "Automated and explainable artificial intelligence to enhance prediction of pedestrian injury severity",
+   "year": "2025",
+   "citations": 17
+  },
+  {
+   "title": "Key factors affecting motorcycle-barrier crash severity: an innovative cluster-regression technique",
+   "year": "2025",
+   "citations": 20
+  },
+  {
+   "title": "Exploring fatal/severe pedestrian injury crash frequency at school zone crash hotspots: using interpretable machine learning to assess the micro-level street environment",
+   "year": "2024",
+   "citations": 41
+  },
+  {
+   "title": "Enhancing mutual understanding of e-scooter user’s perspective in overtaking maneuver through replaying own driving trajectory",
+   "year": "2024",
+   "citations": 9
+  },
+  {
+   "title": "Critical patterns associated with vehicle-pedestrian hit-and-run casualty injury severity under different weather conditions: An association rule mining approach",
+   "year": "2024",
+   "citations": 12
+  },
+  {
+   "title": "Decoding the patterns of critical factor associations driving electric vehicle recommendations",
+   "year": "2024",
+   "citations": 8
+  },
+  {
+   "title": "Spatial instability of crash prediction models: A case of scooter crashes",
+   "year": "2024",
+   "citations": 22
+  },
+  {
+   "title": "Efficiency variations of integrated urban transit stations before and during the COVID-19 pandemic: Insights from a Mega-City without pandemic lockdown measures",
+   "year": "2024",
+   "citations": 6
+  },
+  {
+   "title": "Temporal instability of the determinants of fatal/severe elderly pedestrian injury outcomes in intersections and non-intersections before, during, and after the COVID-19 pandemic",
+   "year": "2024",
+   "citations": 41
+  },
+  {
+   "title": "Analyzing the time-varying patterns of contributing factors in work zone-related crashes",
+   "year": "2024",
+   "citations": 17
+  },
+  {
+   "title": "Unraveling the patterns of critical contributory factors and flag-state affiliations linked with maritime incident outcomes",
+   "year": "2024",
+   "citations": 13
+  },
+  {
+   "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
+   "year": "2024",
+   "citations": 17
+  },
+  {
+   "title": "Examining urban delivery service user profiles and determinants of drone delivery adoption in Ghana considering usage before and after the COVID-19 pandemic",
+   "year": "2024",
+   "citations": 29
+  },
+  {
+   "title": "동일한 충돌 그룹에서 위험 요인 패턴 분석: ADAS 와 ADS 의 비교 연구",
+   "year": "2024",
+   "citations": 0
+  },
+  {
+   "title": "기업들 사이의 경량 전기 자동차 채택에 영향을 미치는 요인",
+   "year": "2024",
+   "citations": 0
+  },
+  {
+   "title": "치명적/심각한 개인 이동 수단 운전자 과실 사고의 중요 요인",
+   "year": "2024",
+   "citations": 0
+  },
+  {
+   "title": "공유자전거 수요예측을 위한 공간-시간적 자기주의 그래프 컨벌루션 네트워크 활용 및 그 결정요인",
+   "year": "2024",
+   "citations": 0
+  },
+  {
+   "title": "공간인공지능을 이용한 스쿨존 내 보행자의 치명적· 중증적 부상 탐색",
+   "year": "2024",
+   "citations": 0
+  },
+  {
+   "title": "Stability of factors influencing walking-along-the-road pedestrian injury severity outcomes under different lighting conditions: A random parameters logit approach with …",
+   "year": "2023",
+   "citations": 38
+  },
+  {
+   "title": "Bicyclist injury severity classification using a random parameter logit model",
+   "year": "2023",
+   "citations": 25
+  },
+  {
+   "title": "Discovering latent topics and trends in autonomous vehicle-related research: A structural topic modelling approach",
+   "year": "2023",
+   "citations": 50
+  },
+  {
+   "title": "Factors influencing fatal vehicle-involved crash consequence metrics at spatio-temporal hotspots in South Korea: application of GIS and machine learning techniques",
+   "year": "2023",
+   "citations": 17
+  },
+  {
+   "title": "Factors affecting fatal PTW at-fault crash outcome metrics at intersections and non-intersections in South Korea",
+   "year": "2023",
+   "citations": 9
+  },
+  {
+   "title": "Pattern recognition from injury severity types of frontage roadway crashes",
+   "year": "2023",
+   "citations": 5
+  },
+  {
+   "title": "Factors associated with driver injury severity of motor vehicle crashes on sealed and unsealed pavements: Random parameter model with heterogeneity in means and variances",
+   "year": "2023",
+   "citations": 28
+  },
+  {
+   "title": "Risk factors influencing fatal powered two-wheeler at-fault and not-at-fault crashes: an application of spatio-temporal hotspot and association rule mining techniques",
+   "year": "2023",
+   "citations": 9
+  },
+  {
+   "title": "Exploring senior motorcyclist injury severity crashes: Random parameter model with heterogeneity in mean and variance",
+   "year": "2023",
+   "citations": 21
+  },
+  {
+   "title": "Discovering research topics, trends, and perspectives in COVID-19-related transportation journal articles",
+   "year": "2022",
+   "citations": 11
+  },
+  {
+   "title": "Mining groups of factors influencing bus/minibus crash severities on poor pavement condition roads considering different lighting status",
+   "year": "2022",
+   "citations": 23
+  },
+  {
+   "title": "Factors affecting motorcycle crash casualty severity at signalized and non-signalized intersections in Ghana: Insights from a data mining and binary logit regression approach",
+   "year": "2022",
+   "citations": 108
+  },
+  {
+   "title": "Fatal pedestrian crashes at intersections: Trend mining using association rules",
+   "year": "2021",
+   "citations": 114
+  },
+  {
+   "title": "Investigating factors affecting bus/minibus accident severity in a developing country for different subgroup datasets characterised by time, pavement, and light conditions",
+   "year": "2021",
+   "citations": 60
+  },
+  {
+   "title": "Finding evacuation routes using traffic and network structure information",
+   "year": "2021",
+   "citations": 43
+  },
+  {
+   "title": "A copula-based approach for jointly modeling crash severity and number of vehicles involved in express bus crashes on expressways considering temporal stability of data",
+   "year": "2020",
+   "citations": 70
+  },
+  {
+   "title": "Application of association rules mining algorithm for hazardous materials transportation crashes on expressway",
+   "year": "2020",
+   "citations": 198
+  },
+  {
+   "title": "Two-stage double bootstrap data envelopment analysis for efficiency evaluation of shared-bicycle stations in urban cities",
+   "year": "2020",
+   "citations": 16
+  },
+  {
+   "title": "Determinants of transit-oriented development efficiency focusing on an integrated subway, bus and shared-bicycle system: Application of Simar-Wilson's two-stage approach",
+   "year": "2020",
+   "citations": 83
+  },
+  {
+   "title": "Assessing the efficiency of integrated public transit stations based on the concept of transit-oriented development",
+   "year": "2020",
+   "citations": 30
+  },
+  {
+   "title": "Discovering insightful rules among truck crash characteristics using apriori algorithm",
+   "year": "2020",
+   "citations": 77
+  },
+  {
+   "title": "Exploring the topological characteristics of complex public transportation networks: Focus on variations in both single and integrated systems in the Seoul Metropolitan Area",
+   "year": "2019",
+   "citations": 59
+  },
+  {
+   "title": "A comprehensive analysis of multi-vehicle crashes on expressways: a double hurdle approach",
+   "year": "2019",
+   "citations": 44
+  },
+  {
+   "title": "Insight from scientific study in logistics using text mining",
+   "year": "2019",
+   "citations": 22
+  },
+  {
+   "title": "Estimating incident duration considering the unobserved heterogeneity of risk factors for trucks transporting HAZMAT on expressways",
+   "year": "2019",
+   "citations": 35
+  }
+ ]
+}

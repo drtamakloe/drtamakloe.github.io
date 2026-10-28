@@ -1,0 +1,25 @@
+title: "Reuben Tamakloe, PhD"
+# author: "Reuben Tamakloe"
+email: "drtamakloe@kookmin.ac.kr"
+description: >-
+  Transportation Analytics & Mobility Lab (TAM Lab), led by Reuben Tamakloe, Assistant Professor at the Graduate School of Automobile and Mobility, Kookmin University, Seoul.
+affiliation: "Graduate School of Automobile and Mobility, Kookmin University"
+url: "https://drtamakloe.github.io"
+show_downloads: false
+
+theme: minima
+
+twitter_username: drtamakloe
+linkedin_username: drtamakloe
+instagram_username: drtamakloe
+
+google_scholar: "https://scholar.google.com/citations?user=2V3gP2EAAAAJ&hl=en"
+scopus: "https://www.scopus.com/authid/detail.uri?authorId=57206723737"
+orcid: "https://orcid.org/0000-0002-9605-8439"
+
+google_analytics: G-G58P7X4Y1K
+google_analytics: G-5QZTXXTGW4
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
