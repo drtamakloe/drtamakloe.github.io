@@ -34,7 +34,7 @@ jobs:
           SCHOLAR_ID: 2V3gP2EAAAAJ
           SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
-          timeout 480 python - <<'PY'
+          timeout 480 python -u - <<'PY'
           import datetime, json, os, re, sys, time
           import requests
           from bs4 import BeautifulSoup
@@ -45,23 +45,40 @@ jobs:
 
           def get_page(url):
               """Fetch one Google Scholar page, through ScraperAPI when a key is set."""
-              for attempt in range(1, 4):
+              if KEY:
+                  # Google Scholar often answers automated visitors with 404 or a CAPTCHA.
+                  # Try ScraperAPI's standard proxies first, then its premium proxies.
+                  tries = [
+                      {"retry_404": "true", "country_code": "us"},
+                      {"retry_404": "true", "country_code": "us"},
+                      {"retry_404": "true", "premium": "true"},
+                      {"retry_404": "true", "premium": "true", "country_code": "us"},
+                  ]
+              else:
+                  tries = [{}, {}]
+              for attempt, extra in enumerate(tries, 1):
+                  mode = " (premium proxies)" if extra.get("premium") else ""
                   try:
                       if KEY:
-                          r = requests.get("https://api.scraperapi.com/", params={"api_key": KEY, "url": url}, timeout=75)
+                          params = {"api_key": KEY, "url": url, **extra}
+                          r = requests.get("https://api.scraperapi.com/", params=params, timeout=90)
                       else:
                           r = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36", "Accept-Language": "en"})
                   except requests.RequestException as e:
-                      print(f"Attempt {attempt}: could not connect ({type(e).__name__}).")
+                      print(f"Attempt {attempt}{mode}: could not connect ({type(e).__name__}).")
                       time.sleep(5); continue
                   if r.status_code == 200 and "gsc_a_tr" in r.text:
+                      print(f"Attempt {attempt}{mode}: profile loaded.")
                       return r.text
-                  hint = {401: "the ScraperAPI key was not accepted. Check the SCRAPERAPI_KEY secret.",
-                          403: "ScraperAPI refused the request. Your free credits may be used up for this month.",
-                          429: "too many requests. Google Scholar or ScraperAPI is rate-limiting."}.get(r.status_code, "")
+                  hint = {401: "The ScraperAPI key was not accepted. Check the SCRAPERAPI_KEY secret.",
+                          403: "ScraperAPI refused the request. Your free credits may be used up for this month, or your plan may not include premium proxies.",
+                          404: "Google Scholar answered 'not found', which it often does for automated visitors.",
+                          429: "Too many requests. Google Scholar or ScraperAPI is rate-limiting.",
+                          500: "ScraperAPI could not get the page after its own retries."}.get(r.status_code, "")
                   if r.status_code == 200: hint = "Google Scholar returned a CAPTCHA or an unexpected page instead of the profile."
-                  print(f"Attempt {attempt}: status {r.status_code}. {hint}")
-                  if r.status_code in (401, 403): break
+                  sample = " ".join(r.text[:160].split())
+                  print(f"Attempt {attempt}{mode}: status {r.status_code}. {hint} Response begins: {sample!r}")
+                  if r.status_code == 401: break
                   time.sleep(5)
               return None
 
