@@ -3,8 +3,9 @@
 # It reads your public Google Scholar profile page and saves the numbers in
 # assets/tamlab/scholar.json, which the website reads. No server or PHP needed.
 #
-# Google Scholar blocks most requests from GitHub's servers, so the request goes through
-# ScraperAPI. Your ScraperAPI key is stored as the repository secret SCRAPERAPI_KEY.
+# Google Scholar blocks most requests from GitHub's servers, so the data comes from
+# SerpApi's Google Scholar Author API (repository secret SERPAPI_KEY). If SerpApi is not set up
+# or fails, it falls back to ScraperAPI (repository secret SCRAPERAPI_KEY).
 name: Update Google Scholar citations
 
 on:
@@ -32,6 +33,7 @@ jobs:
       - name: Fetch citation counts from Google Scholar
         env:
           SCHOLAR_ID: 2V3gP2EAAAAJ
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
           timeout 480 python -u - <<'PY'
@@ -41,6 +43,7 @@ jobs:
 
           SID = os.environ.get("SCHOLAR_ID", "2V3gP2EAAAAJ")
           KEY = os.environ.get("SCRAPERAPI_KEY", "").strip()
+          SERP_KEY = os.environ.get("SERPAPI_KEY", "").strip()
           OUT = "assets/tamlab/scholar.json"
 
           def get_page(url):
@@ -95,19 +98,76 @@ jobs:
               stats = [re.sub(r"\D", "", td.get_text()) for td in soup.select("td.gsc_rsb_std")]
               return pubs, stats
 
-          def main():
-              print("Using ScraperAPI." if KEY else "No SCRAPERAPI_KEY secret found. Trying Google Scholar directly; it may block GitHub.")
-              pubs, stats, start = [], [], 0
+          def fetch_serpapi():
+              """Get the profile from SerpApi's Google Scholar Author API (clean JSON, no scraping)."""
+              pubs, table, start = [], None, 0
               while True:
-                  url = f"https://scholar.google.com/citations?user={SID}&hl=en&cstart={start}&pagesize=100"
-                  html = get_page(url)
-                  if html is None:
-                      sys.exit("Could not load the Google Scholar profile this time. The previous numbers stay on the site.")
-                  page_pubs, page_stats = parse(html)
-                  if start == 0: stats = page_stats
-                  pubs += page_pubs
-                  if len(page_pubs) < 100 or start >= 900: break
+                  params = {"engine": "google_scholar_author", "author_id": SID, "hl": "en",
+                            "num": 100, "start": start, "api_key": SERP_KEY}
+                  r = None
+                  for attempt in range(1, 4):
+                      try:
+                          r = requests.get("https://serpapi.com/search.json", params=params, timeout=90)
+                          break
+                      except requests.RequestException as e:
+                          print(f"SerpApi attempt {attempt}: could not connect ({type(e).__name__}).")
+                          time.sleep(5)
+                  if r is None:
+                      return None
+                  try:
+                      j = r.json()
+                  except ValueError:
+                      j = {}
+                  if r.status_code != 200 or j.get("error"):
+                      msg = j.get("error") or f"status {r.status_code}"
+                      hint = " Check the SERPAPI_KEY secret." if r.status_code == 401 else ""
+                      print(f"SerpApi could not load the profile: {msg}.{hint}")
+                      return None
+                  if table is None:
+                      table = (j.get("cited_by") or {}).get("table") or []
+                  page = j.get("articles") or []
+                  for a in page:
+                      cb = a.get("cited_by") or {}
+                      pubs.append({"title": a.get("title", ""), "year": str(a.get("year") or ""),
+                                   "citations": int(cb.get("value") or 0)})
+                  if len(page) < 100 or start >= 900:
+                      break
                   start += 100
+              def stat(name):
+                  for row in table or []:
+                      if name in row:
+                          return int((row[name] or {}).get("all") or 0)
+                  return 0
+              stats = [str(stat("citations")), "", str(stat("h_index")), "", str(stat("i10_index")), ""]
+              print(f"SerpApi: profile loaded ({len(pubs)} items).")
+              return pubs, stats
+
+          def main():
+              pubs, stats = [], []
+              if SERP_KEY:
+                  print("Using SerpApi.")
+                  got = fetch_serpapi()
+                  if got:
+                      pubs, stats = got
+                  elif KEY:
+                      print("Falling back to ScraperAPI.")
+              if not pubs:
+                  if not SERP_KEY:
+                      print("Using ScraperAPI." if KEY else "No SERPAPI_KEY or SCRAPERAPI_KEY secret found. Trying Google Scholar directly; it may block GitHub.")
+                  if KEY or not SERP_KEY:
+                      start = 0
+                      while True:
+                          url = f"https://scholar.google.com/citations?user={SID}&hl=en&cstart={start}&pagesize=100"
+                          html = get_page(url)
+                          if html is None:
+                              break
+                          page_pubs, page_stats = parse(html)
+                          if start == 0: stats = page_stats
+                          pubs += page_pubs
+                          if len(page_pubs) < 100 or start >= 900: break
+                          start += 100
+              if not pubs:
+                  sys.exit("Could not load the Google Scholar profile this time. The previous numbers stay on the site.")
               if len(pubs) < 20 or len(stats) < 5 or not stats[0]:
                   sys.exit(f"Google Scholar returned incomplete data ({len(pubs)} papers). The previous numbers stay on the site.")
               data = {"source": "Google Scholar", "profile": f"https://scholar.google.com/citations?user={SID}",
