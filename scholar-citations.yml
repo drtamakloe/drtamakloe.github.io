@@ -1,6 +1,10 @@
 # Refreshes Google Scholar citation counts for the TAM Lab website.
 # Runs every Monday, and on demand from the repository's Actions tab ("Run workflow").
-# It writes assets/tamlab/scholar.json, which the website reads. No server or PHP needed.
+# It reads your public Google Scholar profile page and saves the numbers in
+# assets/tamlab/scholar.json, which the website reads. No server or PHP needed.
+#
+# Google Scholar blocks most requests from GitHub's servers, so the request goes through
+# ScraperAPI. Your ScraperAPI key is stored as the repository secret SCRAPERAPI_KEY.
 name: Update Google Scholar citations
 
 on:
@@ -14,52 +18,90 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Install scholarly
-        run: pip install "scholarly==1.7.11" "bibtexparser<2"
+      - name: Install tools
+        run: pip install "requests>=2.31" "beautifulsoup4>=4.12"
 
       - name: Fetch citation counts from Google Scholar
         env:
           SCHOLAR_ID: 2V3gP2EAAAAJ
+          SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
         run: |
-          python - <<'PY'
-          import datetime, json, os, sys
-          from scholarly import scholarly
+          timeout 480 python - <<'PY'
+          import datetime, json, os, re, sys, time
+          import requests
+          from bs4 import BeautifulSoup
 
-          sid = os.environ["SCHOLAR_ID"]
-          try:
-              author = scholarly.search_author_id(sid)
-              author = scholarly.fill(author, sections=["basics", "indices", "publications"])
-          except Exception as e:
-              sys.exit(f"Google Scholar could not be reached this time ({e}). The previous numbers stay on the site.")
+          SID = os.environ.get("SCHOLAR_ID", "2V3gP2EAAAAJ")
+          KEY = os.environ.get("SCRAPERAPI_KEY", "").strip()
+          OUT = "assets/tamlab/scholar.json"
 
-          pubs = [{
-              "title": p.get("bib", {}).get("title", ""),
-              "year": p.get("bib", {}).get("pub_year", ""),
-              "citations": p.get("num_citations", 0),
-          } for p in author.get("publications", [])]
+          def get_page(url):
+              """Fetch one Google Scholar page, through ScraperAPI when a key is set."""
+              for attempt in range(1, 4):
+                  try:
+                      if KEY:
+                          r = requests.get("https://api.scraperapi.com/", params={"api_key": KEY, "url": url}, timeout=75)
+                      else:
+                          r = requests.get(url, timeout=20, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36", "Accept-Language": "en"})
+                  except requests.RequestException as e:
+                      print(f"Attempt {attempt}: could not connect ({type(e).__name__}).")
+                      time.sleep(5); continue
+                  if r.status_code == 200 and "gsc_a_tr" in r.text:
+                      return r.text
+                  hint = {401: "the ScraperAPI key was not accepted. Check the SCRAPERAPI_KEY secret.",
+                          403: "ScraperAPI refused the request. Your free credits may be used up for this month.",
+                          429: "too many requests. Google Scholar or ScraperAPI is rate-limiting."}.get(r.status_code, "")
+                  if r.status_code == 200: hint = "Google Scholar returned a CAPTCHA or an unexpected page instead of the profile."
+                  print(f"Attempt {attempt}: status {r.status_code}. {hint}")
+                  if r.status_code in (401, 403): break
+                  time.sleep(5)
+              return None
 
-          if len(pubs) < 20 or not author.get("citedby"):
-              sys.exit("Google Scholar returned incomplete data. The previous numbers stay on the site.")
+          def parse(html):
+              soup = BeautifulSoup(html, "html.parser")
+              pubs = []
+              for row in soup.select("tr.gsc_a_tr"):
+                  a = row.select_one("a.gsc_a_at")
+                  if not a: continue
+                  c = row.select_one(".gsc_a_ac")
+                  y = row.select_one(".gsc_a_y span") or row.select_one(".gsc_a_h")
+                  n = re.sub(r"\D", "", c.get_text()) if c else ""
+                  pubs.append({"title": a.get_text(" ", strip=True), "year": y.get_text(strip=True) if y else "", "citations": int(n) if n else 0})
+              stats = [re.sub(r"\D", "", td.get_text()) for td in soup.select("td.gsc_rsb_std")]
+              return pubs, stats
 
-          data = {
-              "source": "Google Scholar",
-              "profile": f"https://scholar.google.com/citations?user={sid}",
-              "updated": datetime.date.today().isoformat(),
-              "citations": author.get("citedby"),
-              "hIndex": author.get("hindex"),
-              "i10Index": author.get("i10index"),
-              "publications": pubs,
-          }
-          with open("assets/tamlab/scholar.json", "w", encoding="utf-8") as f:
-              json.dump(data, f, ensure_ascii=False, indent=1)
-          print(f"Saved {len(pubs)} publications, {data['citations']} citations, h-index {data['hIndex']}")
+          def main():
+              print("Using ScraperAPI." if KEY else "No SCRAPERAPI_KEY secret found. Trying Google Scholar directly; it may block GitHub.")
+              pubs, stats, start = [], [], 0
+              while True:
+                  url = f"https://scholar.google.com/citations?user={SID}&hl=en&cstart={start}&pagesize=100"
+                  html = get_page(url)
+                  if html is None:
+                      sys.exit("Could not load the Google Scholar profile this time. The previous numbers stay on the site.")
+                  page_pubs, page_stats = parse(html)
+                  if start == 0: stats = page_stats
+                  pubs += page_pubs
+                  if len(page_pubs) < 100 or start >= 900: break
+                  start += 100
+              if len(pubs) < 20 or len(stats) < 5 or not stats[0]:
+                  sys.exit(f"Google Scholar returned incomplete data ({len(pubs)} papers). The previous numbers stay on the site.")
+              data = {"source": "Google Scholar", "profile": f"https://scholar.google.com/citations?user={SID}",
+                      "updated": datetime.date.today().isoformat(),
+                      "citations": int(stats[0]), "hIndex": int(stats[2]), "i10Index": int(stats[4]), "publications": pubs}
+              with open(OUT, "w", encoding="utf-8") as f:
+                  json.dump(data, f, ensure_ascii=False, indent=1)
+              print(f"Saved {len(pubs)} publications: {data['citations']} citations, h-index {data['hIndex']}, i10-index {data['i10Index']}.")
+
+          if __name__ == "__main__":
+              main()
           PY
 
       - name: Save the new numbers
