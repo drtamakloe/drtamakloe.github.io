@@ -1,10 +1,10 @@
 {
  "source": "Google Scholar",
  "profile": "https://scholar.google.com/citations?user=2V3gP2EAAAAJ",
- "updated": "2026-10-28",
- "citations": 1535,
+ "updated": "2026-11-02",
+ "citations": 1538,
  "hIndex": 22,
- "i10Index": 36,
+ "i10Index": 37,
  "publications": [
   {
    "title": "Application of association rules mining algorithm for hazardous materials transportation crashes on expressway",
@@ -99,17 +99,17 @@
   {
    "title": "Bicyclist injury severity classification using a random parameter logit model",
    "year": "2023",
-   "citations": 25
+   "citations": 24
+  },
+  {
+   "title": "Spatial instability of crash prediction models: A case of scooter crashes",
+   "year": "2024",
+   "citations": 23
   },
   {
    "title": "Mining groups of factors influencing bus/minibus crash severities on poor pavement condition roads considering different lighting status",
    "year": "2022",
    "citations": 23
-  },
-  {
-   "title": "Spatial instability of crash prediction models: A case of scooter crashes",
-   "year": "2024",
-   "citations": 22
   },
   {
    "title": "Insight from scientific study in logistics using text mining",
@@ -122,18 +122,23 @@
    "citations": 21
   },
   {
+   "title": "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
+   "year": "2025",
+   "citations": 20
+  },
+  {
    "title": "Key factors affecting motorcycle-barrier crash severity: an innovative cluster-regression technique",
    "year": "2025",
    "citations": 20
   },
   {
-   "title": "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
-   "year": "2025",
-   "citations": 19
-  },
-  {
    "title": "Does the streetscape built environment matter in explaining crash injury severity among older adults?",
    "year": "2026",
+   "citations": 18
+  },
+  {
+   "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
+   "year": "2024",
    "citations": 18
   },
   {
@@ -143,11 +148,6 @@
   },
   {
    "title": "Analyzing the time-varying patterns of contributing factors in work zone-related crashes",
-   "year": "2024",
-   "citations": 17
-  },
-  {
-   "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
    "year": "2024",
    "citations": 17
   },
@@ -189,7 +189,7 @@
   {
    "title": "Enhancing mutual understanding of e-scooter user’s perspective in overtaking maneuver through replaying own driving trajectory",
    "year": "2024",
-   "citations": 9
+   "citations": 10
   },
   {
    "title": "Factors affecting fatal PTW at-fault crash outcome metrics at intersections and non-intersections in South Korea",
