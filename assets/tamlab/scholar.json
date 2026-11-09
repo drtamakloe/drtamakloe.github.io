@@ -1,15 +1,15 @@
 {
  "source": "Google Scholar",
  "profile": "https://scholar.google.com/citations?user=2V3gP2EAAAAJ",
- "updated": "2026-11-02",
- "citations": 1538,
+ "updated": "2026-11-09",
+ "citations": 1556,
  "hIndex": 22,
  "i10Index": 37,
  "publications": [
   {
    "title": "Application of association rules mining algorithm for hazardous materials transportation crashes on expressway",
    "year": "2020",
-   "citations": 198
+   "citations": 199
   },
   {
    "title": "Fatal pedestrian crashes at intersections: Trend mining using association rules",
@@ -44,12 +44,17 @@
   {
    "title": "Exploring the topological characteristics of complex public transportation networks: Focus on variations in both single and integrated systems in the Seoul Metropolitan Area",
    "year": "2019",
-   "citations": 59
+   "citations": 60
   },
   {
    "title": "Discovering latent topics and trends in autonomous vehicle-related research: A structural topic modelling approach",
    "year": "2023",
-   "citations": 50
+   "citations": 51
+  },
+  {
+   "title": "Exploring fatal/severe pedestrian injury crash frequency at school zone crash hotspots: using interpretable machine learning to assess the micro-level street environment",
+   "year": "2024",
+   "citations": 44
   },
   {
    "title": "A comprehensive analysis of multi-vehicle crashes on expressways: a double hurdle approach",
@@ -57,24 +62,19 @@
    "citations": 44
   },
   {
+   "title": "Temporal instability of the determinants of fatal/severe elderly pedestrian injury outcomes in intersections and non-intersections before, during, and after the COVID-19 pandemic",
+   "year": "2024",
+   "citations": 43
+  },
+  {
    "title": "Finding evacuation routes using traffic and network structure information",
    "year": "2021",
    "citations": 43
   },
   {
-   "title": "Exploring fatal/severe pedestrian injury crash frequency at school zone crash hotspots: using interpretable machine learning to assess the micro-level street environment",
-   "year": "2024",
-   "citations": 41
-  },
-  {
-   "title": "Temporal instability of the determinants of fatal/severe elderly pedestrian injury outcomes in intersections and non-intersections before, during, and after the COVID-19 pandemic",
-   "year": "2024",
-   "citations": 41
-  },
-  {
    "title": "Stability of factors influencing walking-along-the-road pedestrian injury severity outcomes under different lighting conditions: A random parameters logit approach with …",
    "year": "2023",
-   "citations": 38
+   "citations": 39
   },
   {
    "title": "Estimating incident duration considering the unobserved heterogeneity of risk factors for trucks transporting HAZMAT on expressways",
@@ -99,7 +99,7 @@
   {
    "title": "Bicyclist injury severity classification using a random parameter logit model",
    "year": "2023",
-   "citations": 24
+   "citations": 26
   },
   {
    "title": "Spatial instability of crash prediction models: A case of scooter crashes",
@@ -117,14 +117,14 @@
    "citations": 22
   },
   {
-   "title": "Exploring senior motorcyclist injury severity crashes: Random parameter model with heterogeneity in mean and variance",
-   "year": "2023",
+   "title": "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
+   "year": "2025",
    "citations": 21
   },
   {
-   "title": "Differences in injury severities between elderly and non-elderly taxi driver at-fault crashes: Temporal instability and out-of-sample prediction",
-   "year": "2025",
-   "citations": 20
+   "title": "Exploring senior motorcyclist injury severity crashes: Random parameter model with heterogeneity in mean and variance",
+   "year": "2023",
+   "citations": 21
   },
   {
    "title": "Key factors affecting motorcycle-barrier crash severity: an innovative cluster-regression technique",
@@ -134,12 +134,7 @@
   {
    "title": "Does the streetscape built environment matter in explaining crash injury severity among older adults?",
    "year": "2026",
-   "citations": 18
-  },
-  {
-   "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
-   "year": "2024",
-   "citations": 18
+   "citations": 19
   },
   {
    "title": "Automated and explainable artificial intelligence to enhance prediction of pedestrian injury severity",
@@ -152,6 +147,11 @@
    "citations": 17
   },
   {
+   "title": "Critical risk factors associated with fatal/severe crash outcomes in personal mobility device rider at-fault crashes: A two-step inter-cluster rule mining technique",
+   "year": "2024",
+   "citations": 17
+  },
+  {
    "title": "Factors influencing fatal vehicle-involved crash consequence metrics at spatio-temporal hotspots in South Korea: application of GIS and machine learning techniques",
    "year": "2023",
    "citations": 17
@@ -159,7 +159,7 @@
   {
    "title": "Two-stage double bootstrap data envelopment analysis for efficiency evaluation of shared-bicycle stations in urban cities",
    "year": "2020",
-   "citations": 16
+   "citations": 17
   },
   {
    "title": "Assessing the factors associated with pedestrian injury severity in hit-and-run crashes in Ghana",
@@ -167,14 +167,14 @@
    "citations": 14
   },
   {
-   "title": "Unraveling the patterns of critical contributory factors and flag-state affiliations linked with maritime incident outcomes",
-   "year": "2024",
+   "title": "Pattern recognition in crash clusters involving vehicles with advanced driving technologies",
+   "year": "2025",
    "citations": 13
   },
   {
-   "title": "Pattern recognition in crash clusters involving vehicles with advanced driving technologies",
-   "year": "2025",
-   "citations": 12
+   "title": "Unraveling the patterns of critical contributory factors and flag-state affiliations linked with maritime incident outcomes",
+   "year": "2024",
+   "citations": 13
   },
   {
    "title": "Critical patterns associated with vehicle-pedestrian hit-and-run casualty injury severity under different weather conditions: An association rule mining approach",
@@ -212,14 +212,14 @@
    "citations": 7
   },
   {
-   "title": "Efficiency variations of integrated urban transit stations before and during the COVID-19 pandemic: Insights from a Mega-City without pandemic lockdown measures",
-   "year": "2024",
+   "title": "Temporal stability analysis of crash injury severity in school zones: a mixed logit modeling approach",
+   "year": "2025",
    "citations": 6
   },
   {
-   "title": "Temporal stability analysis of crash injury severity in school zones: a mixed logit modeling approach",
-   "year": "2025",
-   "citations": 5
+   "title": "Efficiency variations of integrated urban transit stations before and during the COVID-19 pandemic: Insights from a Mega-City without pandemic lockdown measures",
+   "year": "2024",
+   "citations": 6
   },
   {
    "title": "Pattern recognition from injury severity types of frontage roadway crashes",
@@ -227,22 +227,27 @@
    "citations": 5
   },
   {
+   "title": "Uncovering individual heterogeneity in pedestrian crash severity with mixed logit models: a louisiana case study",
+   "year": "2025",
+   "citations": 4
+  },
+  {
    "title": "Determinants of battery electric vehicle adoption concerns: insights from commercial fleet owners",
    "year": "2026",
    "citations": 3
   },
   {
-   "title": "Uncovering individual heterogeneity in pedestrian crash severity with mixed logit models: a louisiana case study",
-   "year": "2025",
+   "title": "Predicting Crash Severity using Naturalistic Driving Data and Neural Networks",
+   "year": "2026",
    "citations": 3
   },
   {
-   "title": "Predicting Crash Severity using Naturalistic Driving Data and Neural Networks",
+   "title": "Fatal distracted driving pedestrian-involved crashes in Ghana: Exploring cluster-specific factor associations using cluster correspondence analysis",
    "year": "2026",
-   "citations": 2
+   "citations": 1
   },
   {
-   "title": "Fatal distracted driving pedestrian-involved crashes in Ghana: Exploring cluster-specific factor associations using cluster correspondence analysis",
+   "title": "Elderly pedestrian safety in silver zones: A temporal instability analysis of injury severity determinants",
    "year": "2026",
    "citations": 1
   },
@@ -267,7 +272,7 @@
    "citations": 1
   },
   {
-   "title": "Elderly pedestrian safety in silver zones: A temporal instability analysis of injury severity determinants",
+   "title": "Temporal instability in pedestrian injury severity: evidence from school and non-school zones using street-level imagery",
    "year": "2026",
    "citations": 0
   },
