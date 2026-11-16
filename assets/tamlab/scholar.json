@@ -1,8 +1,8 @@
 {
  "source": "Google Scholar",
  "profile": "https://scholar.google.com/citations?user=2V3gP2EAAAAJ",
- "updated": "2026-11-09",
- "citations": 1556,
+ "updated": "2026-11-16",
+ "citations": 1564,
  "hIndex": 22,
  "i10Index": 37,
  "publications": [
@@ -29,7 +29,7 @@
   {
    "title": "Discovering insightful rules among truck crash characteristics using apriori algorithm",
    "year": "2020",
-   "citations": 77
+   "citations": 78
   },
   {
    "title": "A copula-based approach for jointly modeling crash severity and number of vehicles involved in express bus crashes on expressways considering temporal stability of data",
@@ -54,7 +54,7 @@
   {
    "title": "Exploring fatal/severe pedestrian injury crash frequency at school zone crash hotspots: using interpretable machine learning to assess the micro-level street environment",
    "year": "2024",
-   "citations": 44
+   "citations": 45
   },
   {
    "title": "A comprehensive analysis of multi-vehicle crashes on expressways: a double hurdle approach",
@@ -74,7 +74,7 @@
   {
    "title": "Stability of factors influencing walking-along-the-road pedestrian injury severity outcomes under different lighting conditions: A random parameters logit approach with …",
    "year": "2023",
-   "citations": 39
+   "citations": 40
   },
   {
    "title": "Estimating incident duration considering the unobserved heterogeneity of risk factors for trucks transporting HAZMAT on expressways",
@@ -82,24 +82,24 @@
    "citations": 35
   },
   {
+   "title": "Examining urban delivery service user profiles and determinants of drone delivery adoption in Ghana considering usage before and after the COVID-19 pandemic",
+   "year": "2024",
+   "citations": 30
+  },
+  {
    "title": "Assessing the efficiency of integrated public transit stations based on the concept of transit-oriented development",
    "year": "2020",
    "citations": 30
   },
   {
-   "title": "Examining urban delivery service user profiles and determinants of drone delivery adoption in Ghana considering usage before and after the COVID-19 pandemic",
-   "year": "2024",
-   "citations": 29
-  },
-  {
    "title": "Factors associated with driver injury severity of motor vehicle crashes on sealed and unsealed pavements: Random parameter model with heterogeneity in means and variances",
    "year": "2023",
-   "citations": 28
+   "citations": 29
   },
   {
    "title": "Bicyclist injury severity classification using a random parameter logit model",
    "year": "2023",
-   "citations": 26
+   "citations": 27
   },
   {
    "title": "Spatial instability of crash prediction models: A case of scooter crashes",
@@ -227,6 +227,11 @@
    "citations": 5
   },
   {
+   "title": "Predicting Crash Severity using Naturalistic Driving Data and Neural Networks",
+   "year": "2026",
+   "citations": 4
+  },
+  {
    "title": "Uncovering individual heterogeneity in pedestrian crash severity with mixed logit models: a louisiana case study",
    "year": "2025",
    "citations": 4
@@ -237,9 +242,9 @@
    "citations": 3
   },
   {
-   "title": "Predicting Crash Severity using Naturalistic Driving Data and Neural Networks",
+   "title": "How vehicle-to-grid configurations shape plug-in electric vehicle purchase intentions: Evidence of non-transferable effects",
    "year": "2026",
-   "citations": 3
+   "citations": 2
   },
   {
    "title": "Fatal distracted driving pedestrian-involved crashes in Ghana: Exploring cluster-specific factor associations using cluster correspondence analysis",
@@ -248,11 +253,6 @@
   },
   {
    "title": "Elderly pedestrian safety in silver zones: A temporal instability analysis of injury severity determinants",
-   "year": "2026",
-   "citations": 1
-  },
-  {
-   "title": "How vehicle-to-grid configurations shape plug-in electric vehicle purchase intentions: Evidence of non-transferable effects",
    "year": "2026",
    "citations": 1
   },
